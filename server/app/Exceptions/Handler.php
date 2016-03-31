@@ -45,6 +45,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        // 404 page when a model is not found
+        if ($e instanceof ModelNotFoundException) {
+            return response()->view('exception.exception', [], 404);
+        }
+
+        // When route is not found in production 
+        if ($e instanceof NotFoundHttpException) {
+            return response()->view('exception.exception', [], 404);
+        }
+
         return parent::render($request, $e);
     }
 }
