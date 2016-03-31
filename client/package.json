@@ -1,0 +1,73 @@
+{
+    "name": "pantoum-client",
+    "private": true,
+    "version": "1.0.0",
+    "description": "An application to retrieve data from Laravel server side",
+    "main": "index.js",
+    "scripts": {
+        "app-clean": "npm cache clean && bower cache clean",
+        "app-remove": "rm -rf ./node_modules ./bower_components",
+        "app-update": "npm update && bower prune && bower update --allow-root",
+        "prestart": "mkdir -p build && npm-run-all markup js sass img template --parallel",
+        "start": "parallelshell 'npm run serve' 'rerun-script'",
+        "legacy": "echo 'THIS IS LEGACY'",
+        "serve": "live-server --port=9000 --open=build --quiet",
+        "markup": "cp src/index.html build/",
+        "template": "node src/scripts/base.js",
+        "prejs": "mkdir -p build/js/",
+        "js": "browserify -e src/scripts/app.js -d -o build/js/main.js",
+        "presass": "mkdir -p build/css/",
+        "sass": "node-sass src/assets/sass/ -o build/css/",
+        "preimg": "mkdir -p build/img",
+        "img": "imagemin-newer src/assets/img/ build/img",
+        "clean-build": "rm -rf ./build",
+        "test": "karma start karma.conf.js",
+        "test-single-run": "karma start karma.conf.js  --single-run",
+        "protractor": "webdriver-manager update && protractor e2e-tests/protractor.conf.js"
+    },
+    "watches": {
+        "markup": "src/index.html",
+        "js": "src/scripts/**",
+        "sass": "src/assets/sass/**",
+        "img": "src/assets/img/**",
+        "template": ["src/templates/**", "src/models/**"]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tachymetre/pantoum.git"
+    },
+    "keywords": [
+        "API",
+        "serious"
+    ],
+    "author": "Minh Pham",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tachymetre/pantoum/issues"
+    },
+    "homepage": "https://github.com/tachymetre/pantoum#readme",
+    "devDependencies": {
+        "browserify": "^13.0.0",
+        "fs": "0.0.2",
+        "handlebars": "^4.0.5",
+        "imagemin-newer": "^1.0.1",
+        "jasmine-core": "^2.4.1",
+        "jshint": "^2.9.1",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-jasmine": "^0.3.7",
+        "karma-junit-reporter": "^0.4.0",
+        "live-server": "^0.9.2",
+        "mkdirp": "^0.5.1",
+        "node-sass": "^3.4.2",
+        "npm-run-all": "^1.5.2",
+        "parallelshell": "^2.0.0",
+        "protractor": "^3.1.1",
+        "rerun-script": "^0.6.0",
+        "uglify-js": "^2.6.2"
+    },
+    "dependencies": {
+        "angular": "^1.5.0"
+    }
+}
