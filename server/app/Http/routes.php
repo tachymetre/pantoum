@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web', 'cors'], 'prefix' => 'api/v1'], function () {
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+});
+
+Route::group(['middleware' => ['web', 'cors'], 'prefix' => 'api/v1'], function () {
+	Route::resource('blogs', 'BlogsController');
 });
