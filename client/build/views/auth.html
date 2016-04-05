@@ -1,0 +1,27 @@
+<div id="pa-auth-content" class="pure-u-1 pure-u-md-10-24">
+    <form class="pure-form pure-form-aligned" role="form">
+        <fieldset>
+            <h2 class="pa-h2">Login</h2>
+            <div class="pure-control-group">
+                <label for="login-email">Email Address</label>
+                <input id="login-email" class="pure-input-1-2" type="email" placeholder="Email Address" ng-model="auth.email" required>
+            </div>
+            <div class="pure-control-group">
+                <label for="login-password">Password</label>
+                <input id="login-password" class="pure-input-1-2" type="password" placeholder="Password" ng-model="auth.password" required>
+            </div>
+            <div class="pure-controls">
+                <div class="pa-group">
+                    <label for="login-checkbox" class="pure-checkbox">
+                        <input id="login-checkbox" type="checkbox">
+                        <span>Remember Me</span>
+                    </label>
+                    <span class="pa-separator">.</span>
+                    <a class="pa-helper-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="pure-button button-success" ng-click="auth.login()">Login</button>
+                <button type="reset" class="pure-button" >Reset</button>
+            </div>
+        </fieldset>
+    </form>
+</div>

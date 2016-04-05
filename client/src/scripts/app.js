@@ -8,8 +8,6 @@
 =            APP CONFIG            =
 ==================================*/
 'use strict';
-// Require other components to be bundled together
-require('./controllers');
 
 // Create app settings and routing
 var app = angular.module("pantoum", ['ui.router', 'satellizer', 'permission']);
@@ -45,7 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider) {
             }
         }
     });
-})
+});
 
 // Execute logout logics and permission settings
 app.run(function($rootScope, $state, $auth, PermissionStore) {
@@ -71,3 +69,6 @@ app.run(function($rootScope, $state, $auth, PermissionStore) {
         return false;
     });
 });
+
+// Require other components to be bundled together
+require('./controllers');

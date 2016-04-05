@@ -1,0 +1,10 @@
+@media (min-width: 48em) {
+  #od-blog {
+    margin-left: 25%; }
+  .od-header {
+    margin: 20% 2em 0;
+    text-align: right; }
+  #od-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
