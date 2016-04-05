@@ -1,0 +1,25 @@
+/*==============================
+=            LAYOUT            =
+==============================*/
+
+@import "../partial/settings";
+@import "../partial/color";
+
+* {
+    @include box-sizing(border-box);
+    margin: 0;
+}
+
+html,
+body {
+    font-size: $em-base;
+    height: 100%;
+}
+
+a {
+    color: $violet;
+    cursor: pointer;
+    &:hover {
+        color: lighten($violet, 20%);
+    }
+}

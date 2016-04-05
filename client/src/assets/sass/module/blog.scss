@@ -1,0 +1,86 @@
+/*============================
+=            BLOG            =
+============================*/
+
+@import "../partial/settings";
+@import "../partial/color";
+#pa-sidebar {
+    background: $purple;
+    color: $white;
+}
+.pa-title,
+.pa-description {
+    margin: 0;
+}
+.pa-description {
+    font-weight: 300;
+    color: $teal;
+}
+.navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navigation-item {
+    display: inline;
+    zoom: 1;
+}
+.button-ghost {
+    text-shadow: 0 1px 1px $alpha-2;
+    background: transparent;
+    border: 2px solid $teal;
+    color: $white;
+    margin-top: 1em;
+    margin-right: 0.5em;
+    &:hover {
+        border: 2px solid $indigo;
+    }
+}
+#pa-blog {
+    padding: 1em 2em 0;
+    min-height: 100%;
+}
+.pa-subtitle {
+    text-transform: uppercase;
+    color: $gray;
+    border-bottom: 1px solid $dust;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.pa-post {
+    padding-bottom: 2em;
+}
+.pa-post-title {
+    font-size: 2em;
+    color: $coal;
+    margin-bottom: 0.2em;
+}
+.pa-post-author {
+    text-decoration: none;
+    font-size: 110%;
+}
+.pa-post-description {
+    font-size: 1em;
+    color: $coal;
+    line-height: 1.8em;
+}
+#pa-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    display: block;
+    padding: 1em 0;
+    .pa-unordered-list {
+        padding: 0;
+    }
+}
+#pa-footer .pure-menu-link {
+    color: $gray;
+    font-size: 85%;
+    &:hover {
+        background: none;
+        color: darken($gray, 20%);
+    }
+}

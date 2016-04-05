@@ -1,0 +1,108 @@
+// >>>>>>>>>> _settings.scss <<<<<<<<<<
+// TABLE OF CONTENTS
+// =================
+// 01. Base
+// 02. Mixins
+// 
+// 01. Base
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// We use these base settings throughtout
+$em-base: 14px !global;
+// 02. Mixins
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// We use these custom mixins throughtout
+@mixin border-radius($preset) {
+    -webkit-border-radius: $preset;
+    -moz-border-radius: $preset;
+    -o-border-radius: $preset;
+    -ms-border-radius: $preset;
+    border-radius: $preset;
+}
+
+@mixin box-shadow($preset) {
+    -webkit-box-shadow: $preset;
+    -moz-box-shadow: $preset;
+    -o-box-shadow: $preset;
+    -ms-box-shadow: $preset;
+    box-shadow: $preset;
+}
+
+@mixin box-sizing($preset) {
+    -webkit-box-sizing: $preset;
+    -moz-box-sizing: $preset;
+    -o-box-sizing: $preset;
+    -ms-box-sizing: $preset;
+    box-sizing: $preset;
+}
+
+@mixin transition($preset) {
+    -webkit-transition: $preset;
+    -moz-transition: $preset;
+    -o-transition: $preset;
+    -ms-transition: $preset;
+    transition: $preset;
+}
+
+@mixin transform($preset) {
+    -webkit-transform: $preset;
+    -moz-transform: $preset;
+    -o-transform: $preset;
+    -ms-transform: $preset;
+    transform: $preset;
+}
+
+@mixin transform-origin($preset) {
+    -webkit-transform-origin: $preset;
+    -moz-transform-origin: $preset;
+    -o-transform-origin: $preset;
+    -ms-transform-origin: $preset;
+    transform-origin: $preset;
+}
+
+@mixin animation($preset) {
+    -webkit-animation: $preset;
+    -moz-animation: $preset;
+    -o-animation: $preset;
+    -ms-animation: $preset;
+    animation: $preset;
+}
+
+@mixin animation-duration($preset) {
+    -webkit-animation-duration: $preset;
+    -moz-animation-duration: $preset;
+    -o-animation-duration: $preset;
+    -ms-animation-duration: $preset;
+    animation-duration: $preset;
+}
+
+@mixin animation-iteration-count($preset) {
+    -webkit-animation-iteration-count: $preset;
+    -moz-animation-iteration-count: $preset;
+    -o-animation-iteration-count: $preset;
+    -ms-animation-iteration-count: $preset;
+    animation-iteration-count: $preset;
+}
+
+@mixin animation-name($preset) {
+    -webkit-animation-name: $preset;
+    -moz-animation-name: $preset;
+    -o-animation-name: $preset;
+    -ms-animation-name: $preset;
+    animation-name: $preset;
+}
+
+@mixin clip-path($preset) {
+    -webkit-clip-path: $preset;
+    -moz-clip-path: $preset;
+    -o-clip-path: $preset;
+    -ms-clip-path: $preset;
+    clip-path: $preset;
+}
+
+@mixin backface-visibility($preset) {
+    -webkit-backface-visibility: $preset;
+    -moz-backface-visibility: $preset;
+    -o-backface-visibility: $preset;
+    -ms-backface-visibility: $preset;
+    backface-visibility: $preset;
+}
