@@ -26,7 +26,7 @@ class BlogsController extends Controller
         if($search_term) {
             $blogs = Blog::orderBy('id', 'DESC')->where('body', 'LIKE', "%$search_term%")->with(array('User' => function($query) {
                 $query->select('id', 'name');
-            }))->select('id', 'body', 'user_id')->paginate($limit);
+            }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
                 'search' => $search_term,
@@ -35,7 +35,7 @@ class BlogsController extends Controller
         } else {
              $blogs = Blog::orderBy('id', 'DESC')->with(array('User' => function($query) {
                 $query->select('id', 'name');
-            }))->select('id', 'body', 'user_id')->paginate($limit);
+            }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
                 'limit' => $limit
@@ -63,10 +63,10 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        if(!$request->body or !$request->user_id) {
+        if(!$request->title or !$request->body or !$request->user_id) {
             return Response::json([
                 'error' => [
-                    'message' => 'Please provide both body and user_id fields'
+                    'message' => 'Please provide title, body, and user_id fields'
                 ]
             ], 422);
         }
@@ -130,15 +130,16 @@ class BlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(!$request->body or !$request->user_id) {
+        if(!$request->title or !$request->body or !$request->user_id) {
             return Response::json([
                 'error' => [
-                    'message' => 'Please provide both body and user_id fields'
+                    'message' => 'Please provide title, body, and user_id fields'
                 ]
             ], 422);
         }
 
         $blog = Blog::find($id);
+        $blog->title = $request->title;
         $blog->body = $request->body;
         $blog->user_id = $request->user_id;
         $blog->save();
@@ -187,8 +188,9 @@ class BlogsController extends Controller
     private function transform($blog) {
         return [
             'blog_id' => $blog['id'],
+            'blog_title' => $blog['title'],
             'blog' => $blog['body'],
-            'submited_by' => $blog['user']['name']
+            'submitted_by' => $blog['user']['name']
         ];
     }
 }
