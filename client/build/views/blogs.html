@@ -1,0 +1,45 @@
+<div id="pa-sidebar" class="pure-u-1 pure-u-md-1-4">
+    <div class="pa-header">
+        <h1 class="pa-title">Pantoum</h1>
+        <h2 class="pa-description">Blogging Website</h2>
+        <nav id="pa-navigation">
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a class="pure-button button-ghost" href="">Write a story</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="pa-footer">
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pa-unordered-list">
+                <li class="pure-menu-item">
+                    <a href="" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="" class="pure-menu-link">Help</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="" class="pure-menu-link">Privacy</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="" class="pure-menu-link">Terms</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="pa-blog" class="pure-u-1 pure-u-md-3-4">
+    <div id="pa-content">
+        <h1 class="pa-subtitle">Recent</h1>
+        <section class="pa-post" ng-repeat="blog in blogs.blogs">
+            <header class="pa-post-header">
+                <h2 class="pa-post-title">{[{blog.blog_id}]}</h2>
+                <a href="#" class="pa-post-author">{[{blog.submited_by}]}</a>
+            </header>
+            <div class="pa-post-description">
+                <p>{[{blog.blog}]}</p>
+            </div>
+        </section>
+    </div>
+</div>

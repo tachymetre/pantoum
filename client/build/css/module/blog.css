@@ -58,22 +58,25 @@
   font-size: 110%; }
 
 .pa-post-description {
-  font-size: 1em;
+  font-size: 1.1em;
   color: #434343;
   line-height: 1.8em; }
 
 #pa-footer {
   position: absolute;
   bottom: 0;
-  text-align: center;
+  right: 0;
   display: block;
-  padding: 1em 0; }
+  padding: 1em 0;
+  margin: 0 2em; }
   #pa-footer .pa-unordered-list {
     padding: 0; }
 
 #pa-footer .pure-menu-link {
   color: #aaaaaa;
-  font-size: 85%; }
+  font-size: 85%;
+  padding: 0;
+  margin-left: 1em; }
   #pa-footer .pure-menu-link:hover {
     background: none;
     color: #777777; }

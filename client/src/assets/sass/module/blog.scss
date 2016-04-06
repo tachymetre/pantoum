@@ -4,6 +4,7 @@
 
 @import "../partial/settings";
 @import "../partial/color";
+
 #pa-sidebar {
     background: $purple;
     color: $white;
@@ -62,16 +63,17 @@
     font-size: 110%;
 }
 .pa-post-description {
-    font-size: 1em;
+    font-size: 1.1em;
     color: $coal;
     line-height: 1.8em;
 }
 #pa-footer {
     position: absolute;
     bottom: 0;
-    text-align: center;
+    right: 0;
     display: block;
     padding: 1em 0;
+    margin: 0 2em;
     .pa-unordered-list {
         padding: 0;
     }
@@ -79,6 +81,8 @@
 #pa-footer .pure-menu-link {
     color: $gray;
     font-size: 85%;
+    padding: 0;
+    margin-left: 1em;
     &:hover {
         background: none;
         color: darken($gray, 20%);

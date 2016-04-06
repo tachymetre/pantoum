@@ -1,0 +1,38 @@
+<div id="{{components.div-sidebar.id}}" class="pure-u-1 pure-u-md-1-4">
+    <div class="pa-header">
+        <h1 class="pa-title">{{elements.headings.one.[0]}}</h1>
+        <h2 class="pa-description">{{elements.headings.two.[0]}}</h2>
+        <nav id="{{components.div-sidebar.sub.navigation.id}}">
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a class="pure-button button-ghost" href="">{{components.div-sidebar.sub.navigation.anchor.value}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="{{components.div-sidebar.sub.footer.id}}">
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pa-unordered-list">
+                {{#each components.div-sidebar.sub.footer.anchor}}
+                <li class="pure-menu-item">
+                    <a href="{{this.href}}" class="pure-menu-link">{{this.value}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
+    <div id="{{components.div-blog.sub.content.id}}">
+        <h1 class="pa-subtitle">{{elements.headings.one.[1]}}</h1>
+        <section class="pa-post" ng-repeat="{{components.div-blog.sub.content.section.ng-repeat}}">
+            <header class="pa-post-header">
+                <h2 class="pa-post-title">{[{blog.blog_id}]}</h2>
+                <a href="#" class="pa-post-author">{[{blog.submited_by}]}</a>
+            </header>
+            <div class="pa-post-description">
+                <p>{[{blog.blog}]}</p>
+            </div>
+        </section>
+    </div>
+</div>
