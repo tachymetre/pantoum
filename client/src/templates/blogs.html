@@ -23,12 +23,21 @@
     </div>
 </div>
 <div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
+    <div id="pa-profile">
+        <p>Profile here</p>
+    </div>
     <div id="{{components.div-blog.sub.content.id}}">
         <h1 class="pa-subtitle">{{elements.headings.one.[1]}}</h1>
         <section class="pa-post" ng-repeat="{{components.div-blog.sub.content.section.ng-repeat}}">
             <header class="pa-post-header">
                 <h2 class="pa-post-title">{[{blog.blog_title}]}</h2>
-                <a href="#" class="pa-post-author">{[{blog.submitted_by}]}</a>
+                <div class="pa-post-parameter">
+                    <img class="pa-post-avatar" alt="{[{blog.submitted_by}]}" src="{[{blog.represented_by}]}">
+                    <div class="pa-post-meta">
+                        <a href="{[{blog.submitted_by}]}" class="pa-post-author">{[{blog.submitted_by}]}</a>
+                        <p class="pa-post-scatter">4 days ago<span class="pa-post-divider">&#183;</span>5 min read</p>
+                    </div>
+                </div>
             </header>
             <div class="pa-post-description">
                 <p>{[{blog.blog}]}</p>

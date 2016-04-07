@@ -38,7 +38,7 @@
     }
 }
 #pa-blog {
-    padding: 1em 2em 0;
+    padding: 2em 2em 0;
     min-height: 100%;
 }
 .pa-subtitle {
@@ -54,18 +54,46 @@
     padding-bottom: 2em;
 }
 .pa-post-title {
-    font-size: 2em;
+    font-size: 1.8em;
     color: $coal;
     margin-bottom: 0.2em;
 }
+.pa-post-parameter {
+    display: table-cell;
+}
+.pa-post-meta {
+    display: table-cell;
+    padding-left: 1em;
+    padding-top: 0.25em;
+    position: relative;
+}
 .pa-post-author {
+    color: $violet;
+    display: inline-block;
     text-decoration: none;
-    font-size: 110%;
+    font-size: 100%;
+    &:hover {
+        color: lighten($violet, 10%);
+    }
+}
+.pa-post-scatter {
+    font-size: 90%;
+    color: darken($gray, 20%);
+}
+.pa-post-divider {
+    padding: 0 0.5em;
+}
+.pa-post-avatar {
+    float: left;
+    width: 36px;
+    height: 36px;
 }
 .pa-post-description {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 1.1em;
     color: $coal;
     line-height: 1.8em;
+    margin-top: 1em;
 }
 #pa-footer {
     position: absolute;

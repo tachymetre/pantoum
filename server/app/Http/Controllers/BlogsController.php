@@ -25,7 +25,7 @@ class BlogsController extends Controller
 
         if($search_term) {
             $blogs = Blog::orderBy('id', 'DESC')->where('body', 'LIKE', "%$search_term%")->with(array('User' => function($query) {
-                $query->select('id', 'name');
+                $query->select('id', 'name', 'profile_image');
             }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
@@ -34,7 +34,7 @@ class BlogsController extends Controller
             ));
         } else {
              $blogs = Blog::orderBy('id', 'DESC')->with(array('User' => function($query) {
-                $query->select('id', 'name');
+                $query->select('id', 'name', 'profile_image');
             }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
@@ -88,7 +88,7 @@ class BlogsController extends Controller
     public function show($id)
     {
         $blog = Blog::with(array('User' => function($query) {
-            $query->select('id', 'name');
+            $query->select('id', 'name', 'profile_image');
         }))->find($id);
         if(!$blog) {
             return Response::json([
@@ -190,7 +190,8 @@ class BlogsController extends Controller
             'blog_id' => $blog['id'],
             'blog_title' => $blog['title'],
             'blog' => $blog['body'],
-            'submitted_by' => $blog['user']['name']
+            'submitted_by' => $blog['user']['name'],
+            'represented_by' => $blog['user']['profile_image']
         ];
     }
 }
