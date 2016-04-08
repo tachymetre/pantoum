@@ -144,7 +144,8 @@ a {
   color: #777777; }
 
 .pa-post-divider {
-  padding: 0 0.5em; }
+  padding: 0 0.5em;
+  font-weight: bold; }
 
 .pa-post-avatar {
   float: left;
