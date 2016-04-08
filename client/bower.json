@@ -1,7 +1,7 @@
 {
     "name": "pantoum-client",
     "description": "An application to retrieve data from Laravel server side",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "authors": [
         "Minh Pham"
