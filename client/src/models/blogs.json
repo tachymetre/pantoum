@@ -5,7 +5,8 @@
             "headings": {
                 "one": ["Pantoum", "Recent"],
                 "two": ["Blogging Website"]
-            }
+            },
+            "spans": ["&#183;"]
         },
         "components": {
             "div-sidebar": {
