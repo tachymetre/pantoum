@@ -26,7 +26,7 @@ class BlogsController extends Controller
         if($search_term) {
             $blogs = Blog::orderBy('id', 'DESC')->where('body', 'LIKE', "%$search_term%")->with(array('User' => function($query) {
                 $query->select('id', 'name', 'profile_image');
-            }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
+            }))->select('id', 'title', 'body', 'created_at', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
                 'search' => $search_term,
@@ -35,7 +35,7 @@ class BlogsController extends Controller
         } else {
              $blogs = Blog::orderBy('id', 'DESC')->with(array('User' => function($query) {
                 $query->select('id', 'name', 'profile_image');
-            }))->select('id', 'title', 'body', 'user_id')->paginate($limit);
+            }))->select('id', 'title', 'body', 'created_at', 'user_id')->paginate($limit);
 
             $blogs->appends(array(
                 'limit' => $limit
@@ -190,6 +190,7 @@ class BlogsController extends Controller
             'blog_id' => $blog['id'],
             'blog_title' => $blog['title'],
             'blog' => $blog['body'],
+            'blog_created_at' => $blog['created_at'],
             'submitted_by' => $blog['user']['name'],
             'represented_by' => $blog['user']['profile_image']
         ];

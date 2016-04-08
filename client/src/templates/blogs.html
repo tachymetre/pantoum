@@ -35,7 +35,11 @@
                     <img class="pa-post-avatar" alt="{[{blog.submitted_by}]}" src="{[{blog.represented_by}]}">
                     <div class="pa-post-meta">
                         <a href="{[{blog.submitted_by}]}" class="pa-post-author">{[{blog.submitted_by}]}</a>
-                        <p class="pa-post-scatter">4 days ago<span class="pa-post-divider">&#183;</span>5 min read</p>
+                        <p class="pa-post-scatter">
+                            <span time-ago create-time="blog.blog_created_at"></span>
+                            <span class="pa-post-divider">&#183;</span>
+                            <span time-read blog-content="blog.blog"></span>
+                        </p>
                     </div>
                 </div>
             </header>

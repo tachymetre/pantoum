@@ -9,10 +9,10 @@
 ==========================================*/
 'use strict';
 // Require dependencies
-var fs = require('fs');
-var path = require('path');
+var fs     = require('fs');
+var path   = require('path');
 var mkdirp = require('mkdirp');
-var hbs = require('handlebars');
+var hbs    = require('handlebars');
 
 // Require data model
 var componentMapper = {

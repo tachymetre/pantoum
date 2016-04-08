@@ -80,3 +80,4 @@ app.run(function($rootScope, $state, $auth, PermissionStore) {
 
 // Require other components to be bundled together
 require('./controllers');
+require('./directives');
