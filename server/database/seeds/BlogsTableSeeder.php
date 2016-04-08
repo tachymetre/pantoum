@@ -14,8 +14,9 @@ class BlogsTableSeeder extends Seeder {
 
 		foreach (range(1, 30) as $index) {
 			Blog::create([
+				'title'	  => $faker->sentence($nbWords = 6, $variableNbWords = true),
 				'body'    => $faker->paragraph($nbSentences = 3),
-				'user_id' => $faker->numberBetween($min = 1, $max = 5),
+				'user_id' => $faker->numberBetween($min = 1, $max = 5)
 			]);
 		}
 	}

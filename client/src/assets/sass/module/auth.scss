@@ -1,0 +1,44 @@
+/*==============================
+=            AUTH            =
+==============================*/
+
+@import "../partial/settings";
+@import "../partial/color";
+
+.button-success {
+    padding: 0.5em 2em;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: $green;
+}
+
+.pa-h2 {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.pure-form-aligned .pure-controls {
+    margin-top: 0.5em;
+}
+
+#pa-auth-content {
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1.5em 1em;
+    background: $white;
+    @include box-shadow(0 0 10px $purple);
+    @include border-radius(5px);
+}
+
+.pure-controls .pure-checkbox {
+    display: inline-block;
+}
+
+.pa-group {
+    display: block;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,52 @@
+{
+    "BLOGS": {
+        "id": "blog",
+        "elements": {
+            "headings": {
+                "one": ["Pantoum", "Recent"],
+                "two": ["Blogging Website"]
+            },
+            "spans": ["&#183;"]
+        },
+        "components": {
+            "div-sidebar": {
+                "id": "pa-sidebar",
+                "sub": {
+                    "navigation": {
+                        "id": "pa-navigation",
+                        "anchor": {
+                            "value": "Write a story"
+                        }
+                    },
+                    "footer": {
+                        "id": "pa-footer",
+                        "anchor": [{
+                            "href": "",
+                            "value": "About"
+                        }, {
+                            "href": "",
+                            "value": "Help"
+                        }, {
+                            "href": "",
+                            "value": "Privacy"
+                        }, {
+                            "href": "",
+                            "value": "Terms"
+                        }]
+                    }
+                }
+            },
+            "div-blog": {
+                "id": "pa-blog",
+                "sub": {
+                	"content": {
+                		"id": "pa-content",
+                		"section": {
+                			"ng-repeat": "blog in blogs.blogs"
+                		}
+                	}
+                }
+            }
+        }
+    }
+}

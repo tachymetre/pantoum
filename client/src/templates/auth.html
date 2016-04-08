@@ -1,0 +1,28 @@
+<div id="{{components.id}}" class="pure-u-1 pure-u-md-10-24">
+    <form class="pure-form pure-form-aligned" role="form">
+        <fieldset>
+            <h2 class="pa-h2">{{elements.headings.two.[0]}}</h2>
+            {{#each components.div-login}}
+            <div class="pure-control-group">
+                <label for="{{this.input.id}}">{{this.label}}</label>
+                <input id="{{this.input.id}}" class="pure-input-1-2" type="{{this.input.type}}" placeholder="{{this.input.placeholder}}" ng-model="{{this.input.ng-model}}" {{#if this.input.required}}required{{/if}}>
+            </div>
+            {{/each}}
+            {{#with components.div-controls}}
+            <div class="pure-controls">
+                <div class="pa-group">
+                    <label for="{{input.id}}" class="pure-checkbox">
+                        <input id="{{input.id}}" type="{{input.type}}">
+                        <span>{{span.[0]}}</span>
+                    </label>
+                    <span class="pa-separator">{{span.[1]}}</span>
+                    <a class="pa-helper-link">{{anchor.value}}</a>
+                </div>
+                {{#each button}}
+                <button type="{{this.type}}" class="{{this.class}}" {{#if this.ng-click}}ng-click="{{this.ng-click}}"{{/if}}>{{this.value}}</button>
+                {{/each}}
+            </div>
+            {{/with}}
+        </fieldset>
+    </form>
+</div>

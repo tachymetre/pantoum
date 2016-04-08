@@ -1,0 +1,119 @@
+/*============================
+=            BLOG            =
+============================*/
+
+@import "../partial/settings";
+@import "../partial/color";
+
+#pa-sidebar {
+    background: $purple;
+    color: $white;
+}
+.pa-title,
+.pa-description {
+    margin: 0;
+}
+.pa-description {
+    font-weight: 300;
+    color: $teal;
+}
+.navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navigation-item {
+    display: inline;
+    zoom: 1;
+}
+.button-ghost {
+    text-shadow: 0 1px 1px $alpha-2;
+    background: transparent;
+    border: 2px solid $teal;
+    color: $white;
+    margin-top: 1em;
+    margin-right: 0.5em;
+    &:hover {
+        border: 2px solid $indigo;
+    }
+}
+#pa-blog {
+    padding: 2em 2em 0;
+    min-height: 100%;
+}
+.pa-subtitle {
+    text-transform: uppercase;
+    color: $gray;
+    border-bottom: 1px solid $dust;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.pa-post {
+    padding-bottom: 2em;
+}
+.pa-post-title {
+    font-size: 1.8em;
+    color: $coal;
+    margin-bottom: 0.2em;
+}
+.pa-post-parameter {
+    display: table-cell;
+}
+.pa-post-meta {
+    display: table-cell;
+    padding-left: 1em;
+    padding-top: 0.25em;
+    position: relative;
+}
+.pa-post-author {
+    color: $violet;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 100%;
+    &:hover {
+        color: lighten($violet, 10%);
+    }
+}
+.pa-post-scatter {
+    font-size: 90%;
+    color: darken($gray, 20%);
+}
+.pa-post-divider {
+    padding: 0 0.2em;
+    font-weight: bold;
+}
+.pa-post-avatar {
+    float: left;
+    width: 36px;
+    height: 36px;
+}
+.pa-post-description {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.1em;
+    color: $coal;
+    line-height: 1.8em;
+    margin-top: 1em;
+}
+#pa-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    padding: 1em 0;
+    margin: 0 2em;
+    .pa-unordered-list {
+        padding: 0;
+    }
+}
+#pa-footer .pure-menu-link {
+    color: $gray;
+    font-size: 85%;
+    padding: 0;
+    margin-left: 1em;
+    &:hover {
+        background: none;
+        color: darken($gray, 20%);
+    }
+}
