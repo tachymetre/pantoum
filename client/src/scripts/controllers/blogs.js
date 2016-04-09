@@ -4,21 +4,29 @@ module.exports = function($scope, $auth, $q, $http, $state, $rootScope) {
     vm.blogs = [];
     vm.error;
     vm.blog;
-    vm.lastpage = 1;
+    vm.lastPage = 1;
 
     vm.init = function() {
-        vm.lastpage = 1;
+        vm.lastPage = 1;
         $http({
             url: 'http://pantoum.dev/api/v1/blogs',
             method: "GET",
-            params: { page: vm.lastpage }
+            params: { page: vm.lastPage }
         }).success(function(blogs, status, headers, config) {
             vm.blogs = blogs.data;
-            vm.currentpage = blogs.current_page;
+            vm.currentPage = blogs.current_page;
         });
     };
 
     vm.init();
+
+    // vm.getUserProfile = function() {
+    //     var obj = JSON.parse(localStorage.user);
+    //     vm.hello = obj.profile_image;
+    //     console.log(obj.profile_image);
+    // }
+
+    // vm.getUserProfile();
 
     // vm.addJoke = function() {
     //     $http.post('http://ode.dev/api/v1/jokes', {
