@@ -24,7 +24,12 @@
 </div>
 <div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
     <div id="pa-profile">
-        <img class="pa-profile-img">
+        <img class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
+        <input type="text" class="pa-search-box" placeholder="Search Pantoum"></input>
+        <!-- <label class="search" for="inpt_search">
+            <input id="inpt_search" type="text" /> 
+        </label> -->
+        <div class="clearfix"></div>
     </div>
     <div id="{{components.div-blog.sub.content.id}}">
         <h1 class="pa-subtitle">{{elements.headings.one.[1]}}</h1>

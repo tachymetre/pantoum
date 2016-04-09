@@ -20,13 +20,9 @@ module.exports = function($scope, $auth, $q, $http, $state, $rootScope) {
 
     vm.init();
 
-    // vm.getUserProfile = function() {
-    //     var obj = JSON.parse(localStorage.user);
-    //     vm.hello = obj.profile_image;
-    //     console.log(obj.profile_image);
-    // }
-
-    // vm.getUserProfile();
+    vm.getUserProfile = function() {
+        return JSON.parse(localStorage.user).profile_image;
+    }
 
     // vm.addJoke = function() {
     //     $http.post('http://ode.dev/api/v1/jokes', {
