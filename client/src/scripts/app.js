@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider, $interpol
         views: {
             'blogsContent': {
                 templateUrl: 'views/auth.html',
-                controller: 'AuthCtrl as auth'
+                controller: 'authController as auth'
             }
         }
     }).state('blogs', {
@@ -47,7 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider, $interpol
         views: {
             'blogsContent': {
                 templateUrl: 'views/blogs.html',
-                controller: 'BlogsCtrl as blogs'
+                controller: 'blogsController as blogs'
             }
         }
     });
@@ -81,3 +81,4 @@ app.run(function($rootScope, $state, $auth, PermissionStore) {
 // Require other components to be bundled together
 require('./controllers');
 require('./directives');
+require('./services');

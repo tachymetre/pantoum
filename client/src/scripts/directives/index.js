@@ -3,4 +3,5 @@
 var app = angular.module('pantoum');
 app.directive('timeAgo', require('./timeAgo'));
 app.directive('timeRead', require('./timeRead'));
+app.directive('loadMoreContent', require('./loadMoreContent'));
 
