@@ -21,7 +21,7 @@ class BlogsController extends Controller
     public function index(Request $request)
     {
         $search_term = $request->input('search');
-        $limit = $request->input('limit') ? $request->input('limit') : 5;
+        $limit = $request->input('limit') ? $request->input('limit') : 10;
 
         if($search_term) {
             $blogs = Blog::orderBy('id', 'DESC')->where('body', 'LIKE', "%$search_term%")->with(array('User' => function($query) {

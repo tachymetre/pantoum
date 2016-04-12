@@ -1,9 +1,7 @@
 'use strict';
-module.exports = function($scope, $auth, $q, $http, $state, $rootScope) {
+module.exports = function($http) {
     var vm = this;
     vm.blogs = [];
-    vm.error;
-    vm.blog;
     vm.lastPage = 1;
 
     vm.init = function() {
