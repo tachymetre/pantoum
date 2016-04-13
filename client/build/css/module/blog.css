@@ -32,11 +32,14 @@
   min-height: 100%; }
   #pa-blog #pa-profile {
     background: #f7f7f7;
-    position: relative; }
+    position: fixed;
+    z-index: 9999;
+    width: 100%; }
     #pa-blog #pa-profile .pa-profile-image {
+      position: fixed;
+      right: 0;
       width: 2.3em;
       height: 2.3em;
-      float: right;
       margin: 0.5em;
       margin-right: 2em; }
     #pa-blog #pa-profile .pa-search-box {
@@ -52,7 +55,8 @@
       height: 0;
       clear: both; }
   #pa-blog #pa-content {
-    padding: 1em 2em 0; }
+    padding: 1em 2em 0;
+    margin-top: 3.43em; }
   #pa-blog .pa-subtitle {
     text-transform: uppercase;
     color: #aaaaaa;

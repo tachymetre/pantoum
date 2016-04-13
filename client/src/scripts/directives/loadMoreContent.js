@@ -55,7 +55,7 @@ module.exports = function() {
                     windowHeight = $(this).height(),
                     documentHeight = $(document).height();
 
-                if (windowTop > lastScroll && windowTop >= documentHeight - windowHeight - 300) {
+                if (windowTop > lastScroll && windowTop >= documentHeight - windowHeight - 500) {
                     scope.$apply(attrs.initLoad);
                 }
                 lastScroll = windowTop;
