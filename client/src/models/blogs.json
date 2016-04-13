@@ -6,7 +6,13 @@
                 "one": ["Pantoum", "Recent"],
                 "two": ["Blogging Website"]
             },
-            "spans": ["&#183;"]
+            "spans": ["&#183;"],
+            "inputs": {
+                "search": {
+                    "type": "text",
+                    "placeholder": "Search Pantoum"
+                }
+            }
         },
         "components": {
             "div-sidebar": {
@@ -39,12 +45,15 @@
             "div-blog": {
                 "id": "pa-blog",
                 "sub": {
-                	"content": {
-                		"id": "pa-content",
-                		"section": {
-                			"ng-repeat": "blog in blogs.blogs"
-                		}
-                	}
+                    "profile": {
+                        "id": "pa-profile"
+                    },
+                    "content": {
+                        "id": "pa-content",
+                        "section": {
+                            "ng-repeat": "blog in blogs.blogs"
+                        }
+                    }
                 }
             }
         }

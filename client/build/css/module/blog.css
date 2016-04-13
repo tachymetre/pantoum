@@ -43,6 +43,12 @@
       margin: 0.5em;
       margin-right: 2em; }
     #pa-blog #pa-profile .pa-search-box {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+      border: 1px solid #eeeeee;
       margin: 0.5em;
       margin-left: 2em;
       padding: 0.5em;

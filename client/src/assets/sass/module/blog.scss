@@ -54,6 +54,8 @@
             margin-right: 2em;
         }
         .pa-search-box {
+            @include border-radius(5px);
+            border: 1px solid $dust;
             margin: 0.5em;
             margin-left: 2em;
             padding: 0.5em;
