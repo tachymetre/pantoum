@@ -40,16 +40,20 @@
 #pa-blog {
     padding: 0;
     min-height: 100%;
-    #pa-profile {
+    .pa-profile {
         background: $beige;
         position: fixed;
         z-index: 9999;
+        height: 46.1875px;
         width: 100%;
+        top: 0;
+        transition: top 0.3s ease-in-out;
+        -webkit-transition: top 0.3s ease-in-out;
         .pa-profile-image {
             position: fixed;
-            right: 0;
             width: 2.3em;
             height: 2.3em;
+            right: 0;
             margin: 0.5em;
             margin-right: 2em;
         }
@@ -135,9 +139,11 @@
             clear: both;
         }
     }
+    .menu-hide {
+        top: -46.1875px;
+    }
     #pa-content {
         padding: 1em 2em 0;
-        margin-top: 3.43em;
     }
     .pa-subtitle {
         text-transform: uppercase;

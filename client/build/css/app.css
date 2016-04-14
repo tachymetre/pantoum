@@ -2270,19 +2270,23 @@ a {
 #pa-blog {
   padding: 0;
   min-height: 100%; }
-  #pa-blog #pa-profile {
+  #pa-blog .pa-profile {
     background: #f7f7f7;
     position: fixed;
     z-index: 9999;
-    width: 100%; }
-    #pa-blog #pa-profile .pa-profile-image {
+    height: 46.1875px;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+    -webkit-transition: top 0.3s ease-in-out; }
+    #pa-blog .pa-profile .pa-profile-image {
       position: fixed;
-      right: 0;
       width: 2.3em;
       height: 2.3em;
+      right: 0;
       margin: 0.5em;
       margin-right: 2em; }
-    #pa-blog #pa-profile .pa-search-box {
+    #pa-blog .pa-profile .pa-search-box {
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -o-border-radius: 5px;
@@ -2295,18 +2299,18 @@ a {
       padding: 0.5em;
       outline: none;
       width: 30%; }
-    #pa-blog #pa-profile .fa-search {
+    #pa-blog .pa-profile .fa-search {
       position: absolute;
       top: 1.14em;
       left: 2.71em;
       color: #aaaaaa;
       cursor: pointer;
       z-index: 1; }
-    #pa-blog #pa-profile .active .pa-dropdown {
+    #pa-blog .pa-profile .active .pa-dropdown {
       opacity: 1;
       pointer-events: auto;
       display: block; }
-    #pa-blog #pa-profile .pa-dropdown {
+    #pa-blog .pa-profile .pa-dropdown {
       width: 15em;
       max-width: 20em;
       position: absolute;
@@ -2329,7 +2333,7 @@ a {
       -o-border-radius: 5px;
       -ms-border-radius: 5px;
       border-radius: 5px; }
-      #pa-blog #pa-profile .pa-dropdown:before, #pa-blog #pa-profile .pa-dropdown:after {
+      #pa-blog .pa-profile .pa-dropdown:before, #pa-blog .pa-profile .pa-dropdown:after {
         content: "";
         width: 0;
         height: 0;
@@ -2339,39 +2343,40 @@ a {
         border-width: 0 8px 8px 8px;
         border-style: solid;
         border-color: rgba(0, 0, 0, 0.1) transparent; }
-      #pa-blog #pa-profile .pa-dropdown:after {
+      #pa-blog .pa-profile .pa-dropdown:after {
         right: 15px;
         border-width: 0 6px 6px 6px;
         border-color: #ffffff transparent; }
-      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:hover a {
+      #pa-blog .pa-profile .pa-dropdown .pa-dropdown-element:hover a {
         background: #ededf6; }
-      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:first-of-type a {
+      #pa-blog .pa-profile .pa-dropdown .pa-dropdown-element:first-of-type a {
         -webkit-border-radius: 5px 5px 0 0;
         -moz-border-radius: 5px 5px 0 0;
         -o-border-radius: 5px 5px 0 0;
         -ms-border-radius: 5px 5px 0 0;
         border-radius: 5px 5px 0 0; }
-      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:last-of-type a {
+      #pa-blog .pa-profile .pa-dropdown .pa-dropdown-element:last-of-type a {
         -webkit-border-radius: 0 0 5px 5px;
         -moz-border-radius: 0 0 5px 5px;
         -o-border-radius: 0 0 5px 5px;
         -ms-border-radius: 0 0 5px 5px;
         border-radius: 0 0 5px 5px; }
-      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element a {
+      #pa-blog .pa-profile .pa-dropdown .pa-dropdown-element a {
         display: block;
         padding: 0.8em;
         text-decoration: none;
         color: #222222;
         border-bottom: 1px solid #f7f7f7; }
-    #pa-blog #pa-profile .clearfix:after {
+    #pa-blog .pa-profile .clearfix:after {
       content: "";
       visibility: hidden;
       display: block;
       height: 0;
       clear: both; }
+  #pa-blog .menu-hide {
+    top: -46.1875px; }
   #pa-blog #pa-content {
-    padding: 1em 2em 0;
-    margin-top: 3.43em; }
+    padding: 1em 2em 0; }
   #pa-blog .pa-subtitle {
     text-transform: uppercase;
     color: #aaaaaa;
