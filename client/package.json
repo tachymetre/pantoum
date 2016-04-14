@@ -7,7 +7,7 @@
     "scripts": {
         "app-clean": "npm cache clean && bower cache clean",
         "app-remove": "rm -rf ./node_modules ./bower_components",
-        "app-update": "npm update && bower prune && bower update --allow-root",
+        "app-update": "npm run clean-build && npm update && bower prune && bower update --allow-root",
         "prestart": "mkdir -p build && npm-run-all markup js font sass img template --parallel",
         "start": "parallelshell 'npm run serve' 'rerun-script'",
         "legacy": "echo 'THIS IS LEGACY'",
