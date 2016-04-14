@@ -10,32 +10,27 @@ module.exports = function() {
 
             $(window).scroll(function(e) {
                 didScroll = true;
-                if (didScroll) {
-                    hasScrolled();
-                }
-                didScroll = false;
             });
 
-            // setInterval(function() {
-            //     if (didScroll) {
-            //         hasScrolled();
-            //         didScroll = false;
-            //     }
-            // }, 250);
+            setInterval(function() {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 250);
 
             function hasScrolled() {
-                var st = $(window).scrollTop();
-                if (Math.abs(lastScrollTop - st) <= delta)
+                var windowTop = $(window).scrollTop();
+                if (Math.abs(lastScrollTop - windowTop) <= delta)
                     return;
-                if (st > lastScrollTop && st > navbarHeight) {
-
+                if (windowTop > lastScrollTop && windowTop > navbarHeight) {
                     $(elem).removeClass('menu-show').addClass('menu-hide');
                 } else {
-                    if (st + $(window).height() < $(document).height()) {
+                    if (windowTop + $(window).height() < $(document).height()) {
                         $(elem).removeClass('menu-hide').addClass('menu-show');
                     }
                 }
-                lastScrollTop = st;
+                lastScrollTop = windowTop;
             }
         }
     }
