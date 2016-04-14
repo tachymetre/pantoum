@@ -71,6 +71,62 @@
             cursor: pointer;
             z-index: 1;
         }
+        .active .pa-dropdown {
+            opacity: 1;
+            pointer-events: auto;
+            display: block;
+        }
+        .pa-dropdown {
+            width: 15em;
+            max-width: 20em;
+            position: absolute;
+            top: 140%;
+            right: 27%;
+            padding: 0;
+            background: $white;
+            border: 1px solid $alpha-1;
+            list-style-type: none;
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+            @include box-shadow(0 0 5px $alpha-1);
+            @include border-radius(5px);
+            &:before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: 100%;
+                right: 13px;
+                border-width: 0 8px 8px 8px;
+                border-style: solid;
+                border-color: $alpha-1 transparent;
+            }
+            &:after {
+                @extend .pa-dropdown:before;
+                right: 15px;
+                border-width: 0 6px 6px 6px;
+                border-color: $white transparent;
+            }
+            .pa-dropdown-element {
+                &:hover a {
+                    background: lighten($violet, 40%);
+                }
+                &:first-of-type a {
+                    @include border-radius(5px 5px 0 0);
+                }
+                &:last-of-type a {
+                    @include border-radius(0 0 5px 5px);
+                }
+                a {
+                    display: block;
+                    padding: 0.8em;
+                    text-decoration: none;
+                    color: $coal;
+                    border-bottom: 1px solid $beige;
+                }
+            }
+        }
         .clearfix:after {
             content: "";
             visibility: hidden;

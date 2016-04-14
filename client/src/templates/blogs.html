@@ -24,7 +24,14 @@
 </div>
 <div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
     <div id="{{components.div-blog.sub.profile.id}}">
-        <img class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
+        <a class="menu-link"><img drop-down class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}"></a>
+        <div class="pa-dropdown-wrapper">
+            <ul class="pa-dropdown">
+                {{#each components.div-blog.sub.profile.list}}
+                <li class="pa-dropdown-element"><a>{{this.value}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
         <label for="{{elements.inputs.search.id}}">
             <span class="fa fa-search"></span>
             <input id="{{elements.inputs.search.id}}" type="{{elements.inputs.search.type}}" class="pa-search-box" placeholder="{{elements.inputs.search.placeholder}}"></input>

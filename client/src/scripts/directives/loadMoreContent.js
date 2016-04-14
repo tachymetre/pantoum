@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function() {
+module.exports = function($document) {
     return {
         restrict: 'E',
         link: function(scope, elem, attrs) {
@@ -53,13 +53,13 @@ module.exports = function() {
             $(window).scroll(throttle(function() {
                 var windowTop = $(this).scrollTop(),
                     windowHeight = $(this).height(),
-                    documentHeight = $(document).height();
+                    documentHeight = $document.height();
 
                 if (windowTop > lastScroll && windowTop >= documentHeight - windowHeight - 500) {
                     scope.$apply(attrs.initLoad);
                 }
                 lastScroll = windowTop;
-            }, 300));
+            }, 200));
         }
     }
 }

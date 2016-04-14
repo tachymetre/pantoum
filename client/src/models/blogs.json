@@ -47,7 +47,14 @@
                 "id": "pa-blog",
                 "sub": {
                     "profile": {
-                        "id": "pa-profile"
+                        "id": "pa-profile",
+                        "list": [{
+                            "value": "Profile"
+                        }, {
+                            "value": "Settings"
+                        }, {
+                            "value": "Logout"
+                        }]
                     },
                     "content": {
                         "id": "pa-content",

@@ -62,6 +62,67 @@
       color: #aaaaaa;
       cursor: pointer;
       z-index: 1; }
+    #pa-blog #pa-profile .active .pa-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      display: block; }
+    #pa-blog #pa-profile .pa-dropdown {
+      width: 15em;
+      max-width: 20em;
+      position: absolute;
+      top: 140%;
+      right: 27%;
+      padding: 0;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      list-style-type: none;
+      opacity: 0;
+      pointer-events: none;
+      display: none;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px; }
+      #pa-blog #pa-profile .pa-dropdown:before, #pa-blog #pa-profile .pa-dropdown:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 13px;
+        border-width: 0 8px 8px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.1) transparent; }
+      #pa-blog #pa-profile .pa-dropdown:after {
+        right: 15px;
+        border-width: 0 6px 6px 6px;
+        border-color: #ffffff transparent; }
+      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:hover a {
+        background: #ededf6; }
+      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:first-of-type a {
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+        -o-border-radius: 5px 5px 0 0;
+        -ms-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0; }
+      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element:last-of-type a {
+        -webkit-border-radius: 0 0 5px 5px;
+        -moz-border-radius: 0 0 5px 5px;
+        -o-border-radius: 0 0 5px 5px;
+        -ms-border-radius: 0 0 5px 5px;
+        border-radius: 0 0 5px 5px; }
+      #pa-blog #pa-profile .pa-dropdown .pa-dropdown-element a {
+        display: block;
+        padding: 0.8em;
+        text-decoration: none;
+        color: #222222;
+        border-bottom: 1px solid #f7f7f7; }
     #pa-blog #pa-profile .clearfix:after {
       content: "";
       visibility: hidden;
