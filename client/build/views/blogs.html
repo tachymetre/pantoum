@@ -32,8 +32,10 @@
 <div id="pa-blog" class="pure-u-1 pure-u-md-3-4">
     <div id="pa-profile">
         <img class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
-        <input type="text" class="pa-search-box" placeholder="Search Pantoum"></input>
-        <i class="fa fa-camera-retro" aria-hidden="true"></i> fa-camera-retro
+        <label for="pa-search-input">
+            <span class="fa fa-search"></span>
+            <input id="pa-search-input" type="text" class="pa-search-box" placeholder="Search Pantoum"></input>
+        </label>
         <div class="clearfix"></div>
     </div>
     <div id="pa-content">

@@ -51,9 +51,17 @@
       border: 1px solid #eeeeee;
       margin: 0.5em;
       margin-left: 2em;
+      text-indent: 1.71em;
       padding: 0.5em;
       outline: none;
       width: 30%; }
+    #pa-blog #pa-profile .fa-search {
+      position: absolute;
+      top: 1.14em;
+      left: 2.71em;
+      color: #aaaaaa;
+      cursor: pointer;
+      z-index: 1; }
     #pa-blog #pa-profile .clearfix:after {
       content: "";
       visibility: hidden;

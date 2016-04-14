@@ -9,6 +9,7 @@
             "spans": ["&#183;"],
             "inputs": {
                 "search": {
+                    "id": "pa-search-input",
                     "type": "text",
                     "placeholder": "Search Pantoum"
                 }

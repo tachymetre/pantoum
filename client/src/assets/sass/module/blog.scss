@@ -58,9 +58,18 @@
             border: 1px solid $dust;
             margin: 0.5em;
             margin-left: 2em;
+            text-indent: 1.71em;
             padding: 0.5em;
             outline: none;
             width: 30%;
+        }
+        .fa-search {
+            position: absolute;
+            top: 1.14em;
+            left: 2.71em;
+            color: $gray;
+            cursor: pointer;
+            z-index: 1;
         }
         .clearfix:after {
             content: "";
