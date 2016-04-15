@@ -56,7 +56,7 @@
                 </div>
             </header>
             <div class="pa-post-description">
-                <p>{[{blog.blog}]}</p>
+                <p>{[{blog.blog | limitTo : 200}]}</p>
             </div>
         </section>
         <load-more-content init-load="blogs.loadMoreContent()"></load-more-content>
