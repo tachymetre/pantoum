@@ -23,6 +23,7 @@ module.exports = function($state) {
             function hasScrolled() {
                 var windowTop = $(window).scrollTop(),
                     $dropDownsIsActive;
+                    
                 // Only allow the scrollHide when on the blogs route
                 if ($state.$current.url.sourcePath == "/blogs") {
                     $dropDownsIsActive = $('.pa-dropdown-wrapper').attr('class').indexOf('active');
