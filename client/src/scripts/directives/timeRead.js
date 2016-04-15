@@ -5,7 +5,7 @@ module.exports = function() {
         scope: {
             'blogContent': '='
         },
-        link: function(scope, elem, attrs) {
+        link: (scope, elem, attrs) => {
             var contentLength = (scope.blogContent).split(" ").length,
                 avgwpm = 300,
                 timeRead = contentLength / avgwpm;

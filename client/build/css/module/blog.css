@@ -139,7 +139,8 @@
   #pa-blog .menu-hide {
     top: -3.3em; }
   #pa-blog #pa-content {
-    padding: 1em 2em 0; }
+    padding: 1em 2em 0;
+    margin-top: 3.3em; }
   #pa-blog .pa-subtitle {
     text-transform: uppercase;
     color: #aaaaaa;

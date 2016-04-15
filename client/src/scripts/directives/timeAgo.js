@@ -5,7 +5,7 @@ module.exports = function() {
         scope: {
             'createTime': '='
         },
-        link: function(scope, elem, attrs) {
+        link: (scope, elem, attrs) => {
         	var result = $.timeago(scope.createTime);
         	$(elem).html(result);
         }

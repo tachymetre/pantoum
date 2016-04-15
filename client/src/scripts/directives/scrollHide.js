@@ -2,17 +2,18 @@
 module.exports = function() {
     return {
         restrict: 'A',
-        link: function(scope, elem, attrs) {
+        scope: true,
+        link: (scope, elem, attrs) => {
             var didScroll,
                 lastScrollTop = 0,
                 delta = 5,
                 navbarHeight = $(elem).outerHeight();
 
-            $(window).scroll(function(e) {
+            $(window).scroll((e) => {
                 didScroll = true;
             });
 
-            setInterval(function() {
+            setInterval(() => {
                 if (didScroll) {
                     hasScrolled();
                     didScroll = false;

@@ -2,7 +2,8 @@
 module.exports = function($document) {
     return {
         restrict: 'E',
-        link: function(scope, elem, attrs) {
+        scope: true,
+        link: (scope, elem, attrs) => {
             // Calculate current time to detect a shift in calling 
             var timeNow = Date.now || function() {
                 return new Date().getTime();
