@@ -34,11 +34,14 @@
     background: #f7f7f7;
     position: fixed;
     z-index: 9999;
-    height: 46.1875px;
+    height: 3.3em;
     width: 100%;
     top: 0;
-    transition: top 0.3s ease-in-out;
-    -webkit-transition: top 0.3s ease-in-out; }
+    -webkit-transition: top 0.2s ease-in-out;
+    -moz-transition: top 0.2s ease-in-out;
+    -o-transition: top 0.2s ease-in-out;
+    -ms-transition: top 0.2s ease-in-out;
+    transition: top 0.2s ease-in-out; }
     #pa-blog .pa-profile .pa-profile-image {
       position: fixed;
       width: 2.3em;
@@ -134,7 +137,7 @@
       height: 0;
       clear: both; }
   #pa-blog .menu-hide {
-    top: -46.1875px; }
+    top: -3.3em; }
   #pa-blog #pa-content {
     padding: 1em 2em 0; }
   #pa-blog .pa-subtitle {

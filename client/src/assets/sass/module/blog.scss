@@ -44,11 +44,10 @@
         background: $beige;
         position: fixed;
         z-index: 9999;
-        height: 46.1875px;
+        height: 3.3em;
         width: 100%;
         top: 0;
-        transition: top 0.3s ease-in-out;
-        -webkit-transition: top 0.3s ease-in-out;
+        @include transition(top 0.2s ease-in-out);
         .pa-profile-image {
             position: fixed;
             width: 2.3em;
@@ -140,7 +139,7 @@
         }
     }
     .menu-hide {
-        top: -46.1875px;
+        top: -3.3em;
     }
     #pa-content {
         padding: 1em 2em 0;
