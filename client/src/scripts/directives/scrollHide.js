@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function() {
+module.exports = function($state) {
     return {
         restrict: 'A',
         scope: true,
@@ -22,7 +22,12 @@ module.exports = function() {
 
             function hasScrolled() {
                 var windowTop = $(window).scrollTop(),
+                    $dropDownsIsActive;
+                // Only allow the scrollHide when on the blogs route
+                if ($state.$current.url.sourcePath == "/blogs") {
                     $dropDownsIsActive = $('.pa-dropdown-wrapper').attr('class').indexOf('active');
+                }
+
                 // Make sure the scrolling has passed a certain threshold
                 if (Math.abs(lastScrollTop - windowTop) <= delta) {
                     return;
