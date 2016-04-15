@@ -41,6 +41,24 @@
         height: 1px;
         margin: 1em 0;
     }
+    .highlight-title {
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+        color: $white;
+    }
+    .pure-highlight-item {
+        display: inline;
+    }
+    .pure-highlight-link {
+        color: lighten($violet, 15%);
+        font-size: 1em;
+        padding: 0;
+        margin-left: 0.5em;
+        &:hover {
+            background: none;
+            color: lighten($violet, 35%);
+        }
+    }
 }
 
 #pa-blog {
@@ -215,17 +233,19 @@
     display: block;
     padding: 1em 0;
     margin: 0 2em;
-    .pa-unordered-list {
-        padding: 0;
-    }
     .pure-menu-link {
-        color: $gray;
+        color: lighten($violet, 5%);
         font-size: 85%;
         padding: 0;
         margin-left: 1em;
         &:hover {
             background: none;
-            color: darken($gray, 20%);
+            color: lighten($violet, 25%);
         }
     }
+}
+
+.pa-unordered-list {
+    padding: 0;
+    list-style-type: none;
 }

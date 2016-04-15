@@ -31,6 +31,20 @@
     width: 100%;
     height: 1px;
     margin: 1em 0; }
+  #pa-sidebar .highlight-title {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    color: #ffffff; }
+  #pa-sidebar .pure-highlight-item {
+    display: inline; }
+  #pa-sidebar .pure-highlight-link {
+    color: #999bca;
+    font-size: 1em;
+    padding: 0;
+    margin-left: 0.5em; }
+    #pa-sidebar .pure-highlight-link:hover {
+      background: none;
+      color: #dcdded; }
 
 #pa-blog {
   padding: 0;
@@ -198,13 +212,15 @@
   display: block;
   padding: 1em 0;
   margin: 0 2em; }
-  #pa-footer .pa-unordered-list {
-    padding: 0; }
   #pa-footer .pure-menu-link {
-    color: #aaaaaa;
+    color: #787ab9;
     font-size: 85%;
     padding: 0;
     margin-left: 1em; }
     #pa-footer .pure-menu-link:hover {
       background: none;
-      color: #777777; }
+      color: #bbbcdc; }
+
+.pa-unordered-list {
+  padding: 0;
+  list-style-type: none; }
