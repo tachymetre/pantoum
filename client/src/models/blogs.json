@@ -53,7 +53,8 @@
                         }, {
                             "value": "Settings"
                         }, {
-                            "value": "Logout"
+                            "value": "Logout",
+                            "ng-click": "logout()"
                         }]
                     },
                     "content": {

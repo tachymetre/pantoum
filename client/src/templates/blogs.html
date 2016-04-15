@@ -28,7 +28,7 @@
         <div class="pa-dropdown-wrapper">
             <ul class="pa-dropdown">
                 {{#each components.div-blog.sub.profile.list}}
-                <li class="pa-dropdown-element"><a>{{this.value}}</a></li>
+                <li class="pa-dropdown-element" {{#if this.ng-click}}ng-click="{{this.ng-click}}"{{/if}}><a>{{this.value}}</a></li>
                 {{/each}}
             </ul>
         </div>
