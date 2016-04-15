@@ -4,13 +4,13 @@ module.exports = function($http) {
     vm.blogs = [];
     vm.lastPage = 1;
 
-    vm.init = () => {
+    vm.init = function() {
         vm.lastPage = 1;
         $http({
             url: 'http://pantoum.dev/api/v1/blogs',
             method: "GET",
             params: { page: vm.lastPage }
-        }).success((blogs, status, headers, config) => {
+        }).success(function(blogs, status, headers, config) {
             vm.blogs = blogs.data;
             vm.currentPage = blogs.current_page;
         });
@@ -18,11 +18,11 @@ module.exports = function($http) {
 
     vm.init();
 
-    vm.getUserProfile = () => {
+    vm.getUserProfile = function() {
         return JSON.parse(localStorage.user).profile_image;
     }
 
-    vm.loadMoreContent = () => {
+    vm.loadMoreContent = function() {
         vm.lastPage += 1;
         $http({
             url: 'http://pantoum.dev/api/v1/blogs',
