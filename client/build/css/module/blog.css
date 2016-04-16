@@ -38,13 +38,13 @@
   #pa-sidebar .pure-highlight-item {
     display: inline; }
   #pa-sidebar .pure-highlight-link {
-    color: #999bca;
+    color: #bbbcdc;
     font-size: 1em;
     padding: 0;
     margin-left: 0.5em; }
     #pa-sidebar .pure-highlight-link:hover {
       background: none;
-      color: #dcdded; }
+      color: white; }
 
 #pa-blog {
   padding: 0;

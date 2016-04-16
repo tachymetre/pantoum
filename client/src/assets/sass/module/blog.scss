@@ -50,13 +50,13 @@
         display: inline;
     }
     .pure-highlight-link {
-        color: lighten($violet, 15%);
+        color: lighten($violet, 25%);
         font-size: 1em;
         padding: 0;
         margin-left: 0.5em;
         &:hover {
             background: none;
-            color: lighten($violet, 35%);
+            color: lighten($violet, 65%);
         }
     }
 }
