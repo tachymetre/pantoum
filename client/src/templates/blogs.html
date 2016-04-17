@@ -13,9 +13,7 @@
         <section class="highlight-component" ng-repeat="{{components.div-sidebar.sub.component.section.ng-repeat}}">
             <p class="highlight-title">{[{highlight.highlight_title}]}</p>
             <ul class="pa-unordered-list">
-                <li class="pure-highlight-item">
-                    <a class="pure-highlight-link">{[{highlight.highlight_tag}]}</a>
-                </li>
+                <tag-transform tags="{[{highlight.highlight_tag}]}"></tag-transform>
             </ul>
         </section>
     </div>
