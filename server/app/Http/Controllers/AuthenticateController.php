@@ -18,7 +18,7 @@ class AuthenticateController extends Controller
     }
 
     public function index() {
-        return "Auth index";
+        return "Authentication index";
     }
 
     /**
