@@ -25,6 +25,11 @@
                             "value": "Write a story"
                         }
                     },
+                    "component": {
+                        "section": {
+                            "ng-repeat": "highlight in blogs.highlights"
+                        }
+                    },
                     "footer": {
                         "id": "pa-footer",
                         "anchor": [{

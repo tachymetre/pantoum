@@ -22,7 +22,7 @@ class HighlightsController extends Controller
     {
         $limit = $request->input('limit') ? $request->input('limit') : 9;
 
-        $highlights = Highlight::orderBy('id', 'DESC')->select('id', 'title', 'tag', 'created_at')->paginate($limit);
+        $highlights = Highlight::orderBy('id', 'ASC')->select('id', 'title', 'tag', 'created_at')->paginate($limit);
 
         $highlights->appends(array(
             'limit' => $limit

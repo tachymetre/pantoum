@@ -38,8 +38,7 @@ module.exports = function($http) {
             url: 'http://pantoum.dev/api/v1/highlights',
             method: "GET"
         }).success(function(highlights, status, headers, config) {
-            vm.highlights = highlights;
-            console.log(vm.highlights);
+            vm.highlights = highlights.data;
         });
     }
 

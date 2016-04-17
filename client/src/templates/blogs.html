@@ -10,11 +10,11 @@
             </ul>
         </nav>
         <div class="horizontal-divider"></div>
-        <section class="highlight-component">
-            <p class="highlight-title">Trending</p>
+        <section class="highlight-component" ng-repeat="{{components.div-sidebar.sub.component.section.ng-repeat}}">
+            <p class="highlight-title">{[{highlight.highlight_title}]}</p>
             <ul class="pa-unordered-list">
                 <li class="pure-highlight-item">
-                    <a class="pure-highlight-link">#pantoum</a>
+                    <a class="pure-highlight-link">{[{highlight.highlight_tag}]}</a>
                 </li>
             </ul>
         </section>
