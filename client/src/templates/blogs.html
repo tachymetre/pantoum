@@ -65,8 +65,11 @@
             </div>
             <div class="pa-post-utility">
                 <ul class="pa-unordered-list">
-                    <li class="pure-util-item"><a class="pure-util-link"><span class="fa fa-star-o"></span> {[{blog.blog_like}]} likes</a></li>
-                    <li class="pure-util-item"><a class="pure-util-link"><span class="fa fa-comment-o"></span> {[{blog.blog_comment}]} comments</a></li>
+                    {{#each components.div-blog.sub.content.section.list}}
+                    <li class="pure-util-item">
+                        <a class="pure-util-link"><span class="fa fa-{{this.icon}}"></span> {{this.value}}</a>
+                    </li>
+                    {{/each}}
                 </ul>
             </div>
         </section>

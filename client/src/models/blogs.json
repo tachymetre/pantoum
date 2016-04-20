@@ -65,7 +65,14 @@
                     "content": {
                         "id": "pa-content",
                         "section": {
-                            "ng-repeat": "blog in blogs.blogs"
+                            "ng-repeat": "blog in blogs.blogs",
+                            "list": [{
+                                "icon": "star-o",
+                                "value": " {[{blog.blog_like}]} likes"
+                            }, {
+                                "icon": "comment-o",
+                                "value": " {[{blog.blog_comment}]} comments"
+                            }]
                         }
                     }
                 }
