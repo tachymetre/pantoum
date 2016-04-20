@@ -3,7 +3,7 @@
         "id": "blog",
         "elements": {
             "headings": {
-                "one": ["Pantoum", "Recent"],
+                "one": ["Pantoum"],
                 "two": ["Writing is a passion"]
             },
             "spans": ["&#183;"],
