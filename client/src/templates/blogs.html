@@ -56,7 +56,7 @@
                         <a href="" class="pa-post-author">{[{blog.submitted_by}]}</a>
                         <p class="pa-post-scatter">
                             <span time-ago create-time="blog.blog_created_at"></span>
-                            <span class="pa-post-divider">{{{elements.spans.[0]}}}</span>
+                            <span class="pa-post-dot">{{{elements.spans.[0]}}}</span>
                             <span time-read blog-content="blog.blog"></span>
                         </p>
                     </div>
@@ -64,6 +64,14 @@
             </header>
             <div class="pa-post-description">
                 <p>{[{blog.blog | limitTo : 200}]}</p>
+            </div>
+            <div class="pa-post-divider"></div>
+            <div>
+                <ul class="pa-unordered-list">
+                    <li class="pure-util-item"><span class="fa fa-star-o"></span> likes</li>
+                    <li class="pure-util-item"><span class="fa fa-comment-o"></span> comments</li>
+                    <li class="pure-util-item"><span class="fa fa-share-alt"></span> share</li>
+                </ul>
             </div>
         </section>
         <load-more-content init-load="blogs.loadMoreContent()"></load-more-content>
