@@ -20,6 +20,11 @@ var componentMapper = {
     models: '../models/',
     dest: 'build/views/'
 };
+var partialMapper = {
+    templates: 'src/partials/',
+    models: '../models/',
+    dest: 'build/partials/'
+};
 
 // Transform handlebars templates into view files
 fs.readdir(componentMapper.templates, (error, files) => {
@@ -42,3 +47,26 @@ fs.readdir(componentMapper.templates, (error, files) => {
         });
     });
 });
+// Transform handlebars partials into view files
+fs.readdir(partialMapper.templates, (error, files) => {
+    if (error) throw error;
+    files.forEach((file) => {
+        fs.readFile(partialMapper.templates + file, 'UTF-8', (error, source) => {
+            var template = hbs.compile(source),
+                fileName = path.basename(file, '.html'),
+                data = require(partialMapper.models + fileName)[fileName.toUpperCase()],
+                view = template(data);
+
+            // Create directory if not exists
+            mkdirp(partialMapper.dest, (error) => {
+                if (error) throw error;
+                fs.writeFile(partialMapper.dest + file, view, (error) => {
+                    if (error) throw error;
+                });
+            });
+
+        });
+    });
+});
+
+
