@@ -227,6 +227,7 @@
     }
     .pure-util-link {
         color: $gray;
+        font-size: 90%;
         &:hover {
             color: darken($gray, 20%);
         }
