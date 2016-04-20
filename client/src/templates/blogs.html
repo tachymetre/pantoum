@@ -34,12 +34,14 @@
         <div class="pa-dropdown-wrapper">
             <ul class="pa-dropdown">
                 {{#each components.div-blog.sub.profile.list}}
-                <li class="pa-dropdown-element" {{#if this.ng-click}}ng-click="{{this.ng-click}}" {{/if}}><a>{{this.value}}</a></li>
+                <li class="pa-dropdown-element" {{#if this.ng-click}}ng-click="{{this.ng-click}}" {{/if}}>
+                    <a><span class="fa fa-{{this.icon}} menu-dropdown-icon"></span> {{this.value}}</a>
+                </li>
                 {{/each}}
             </ul>
         </div>
         <label for="{{elements.inputs.search.id}}">
-            <span class="fa fa-search"></span>
+            <span id="{{elements.spans.id.[0]}}" class="fa fa-search"></span>
             <input id="{{elements.inputs.search.id}}" type="{{elements.inputs.search.type}}" class="pa-search-box" placeholder="{{elements.inputs.search.placeholder}}" />
         </label>
         <div class="clearfix"></div>
@@ -54,7 +56,7 @@
                         <a href="" class="pa-post-author">{[{blog.submitted_by}]}</a>
                         <p class="pa-post-scatter">
                             <span time-ago create-time="blog.blog_created_at"></span>
-                            <span class="pa-post-dot">{{{elements.spans.[0]}}}</span>
+                            <span class="pa-post-dot">{{{elements.spans.value.[0]}}}</span>
                             <span time-read blog-content="blog.blog"></span>
                         </p>
                     </div>

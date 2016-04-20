@@ -88,7 +88,7 @@
             outline: none;
             width: 30%;
         }
-        .fa-search {
+        #search-input-icon {
             position: absolute;
             top: 1.14em;
             left: 1.71em;
@@ -150,6 +150,10 @@
                     color: $coal;
                     border-bottom: 1px solid $beige;
                 }
+            }
+            .menu-dropdown-icon {
+                color: $coal;
+                margin-right: 0.5em;
             }
         }
         .clearfix:after {

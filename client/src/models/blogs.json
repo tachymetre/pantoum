@@ -6,7 +6,10 @@
                 "one": ["Pantoum"],
                 "two": ["Writing is a passion"]
             },
-            "spans": ["&#183;"],
+            "spans": {
+                "id": ["search-input-icon"],
+                "value": ["&#183;"]
+            },
             "inputs": {
                 "search": {
                     "id": "pa-search-input",
@@ -54,10 +57,13 @@
                     "profile": {
                         "id": "pa-profile",
                         "list": [{
+                            "icon": "user",
                             "value": "Profile"
                         }, {
+                            "icon": "gear",
                             "value": "Settings"
                         }, {
+                            "icon": "sign-out",
                             "value": "Logout",
                             "ng-click": "logout()"
                         }]
