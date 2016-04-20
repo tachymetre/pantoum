@@ -12,7 +12,6 @@ module.exports = function($http) {
             params: { page: vm.lastPage }
         }).success(function(blogs, status, headers, config) {
             vm.blogs = blogs.data;
-            console.log(vm.blogs);
             vm.currentPage = blogs.current_page;
         });
     };

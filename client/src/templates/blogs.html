@@ -63,12 +63,10 @@
             <div class="pa-post-description">
                 <p>{[{blog.blog | limitTo : 200}]}</p>
             </div>
-            <div class="pa-post-divider"></div>
-            <div>
+            <div class="pa-post-utility">
                 <ul class="pa-unordered-list">
-                    <li class="pure-util-item"><span class="fa fa-star-o"></span> likes</li>
-                    <li class="pure-util-item"><span class="fa fa-comment-o"></span> comments</li>
-                    <li class="pure-util-item"><span class="fa fa-share-alt"></span> share</li>
+                    <li class="pure-util-item"><a class="pure-util-link"><span class="fa fa-star-o"></span> {[{blog.blog_like}]} likes</a></li>
+                    <li class="pure-util-item"><a class="pure-util-link"><span class="fa fa-comment-o"></span> comments</a></li>
                 </ul>
             </div>
         </section>
