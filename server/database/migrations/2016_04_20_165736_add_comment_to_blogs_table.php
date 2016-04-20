@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLikeToBlogsTable extends Migration
+class AddCommentToBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddLikeToBlogsTable extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->integer('like');
+            $table->integer('comment');
         });
     }
 
@@ -25,7 +25,7 @@ class AddLikeToBlogsTable extends Migration
     public function down()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->dropColumn('like');
+            $table->dropColumn('comment');
         });
     }
 }
