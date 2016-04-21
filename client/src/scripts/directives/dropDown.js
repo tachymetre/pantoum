@@ -7,7 +7,7 @@ module.exports = function($document) {
                 $('.pa-dropdown-wrapper').toggleClass('active');
                 return false;
             });
-            $document.on('click', () => {
+            $document.on('click', (e) => {
             	$('.pa-dropdown-wrapper').removeClass('active');
             });
         }

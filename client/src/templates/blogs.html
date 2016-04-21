@@ -30,7 +30,12 @@
 </div>
 <div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
     <div id="{{components.div-blog.sub.profile.id}}" class="pa-profile menu-show" scroll-hide>
-        <a class="menu-link"><img drop-down class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}"></a>
+        <a class="menu-link">
+            <img drop-down class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
+        </a>
+        <a class="menu-link">
+            <span class="fa fa-bell-o menu-icon"></span>
+        </a>
         <div class="pa-dropdown-wrapper">
             <ul class="pa-dropdown">
                 {{#each components.div-blog.sub.profile.list}}

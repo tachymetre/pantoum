@@ -96,6 +96,16 @@
             cursor: pointer;
             z-index: 1;
         }
+        .menu-icon {
+            color: $gray;
+            font-size: 1.2em;
+            position: fixed;
+            margin-top: 1em;
+            right: 60px;
+            &:hover {
+                color: darken($gray, 20%);
+            }
+        }
         .active .pa-dropdown {
             opacity: 1;
             pointer-events: auto;
