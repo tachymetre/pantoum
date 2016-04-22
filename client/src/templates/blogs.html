@@ -31,19 +31,31 @@
 <div id="{{components.div-blog.id}}" class="pure-u-1 pure-u-md-3-4">
     <div id="{{components.div-blog.sub.profile.id}}" class="pa-profile menu-show" scroll-hide>
         <a class="menu-link">
-            <img drop-down class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
+            <img drop-down aim="profile" class="pa-profile-image" ng-src="{[{blogs.getUserProfile()}]}">
         </a>
         <a class="menu-link">
-            <span class="fa fa-bell-o menu-icon"></span>
+            <span drop-down aim="notification" class="fa fa-bell-o menu-icon"></span>
         </a>
-        <div class="pa-dropdown-wrapper">
-            <ul class="pa-dropdown">
-                {{#each components.div-blog.sub.profile.list}}
-                <li class="pa-dropdown-element" {{#if this.ng-click}}ng-click="{{this.ng-click}}" {{/if}}>
-                    <a><span class="fa fa-{{this.icon}} menu-dropdown-icon"></span> {{this.value}}</a>
-                </li>
-                {{/each}}
-            </ul>
+        <div data-target="profile" class="pa-dropdown-wrapper">
+            <div class="pa-dropdown">
+                <ul>
+                    {{#each components.div-blog.sub.profile.list}}
+                    <li class="pa-dropdown-element" {{#if this.ng-click}}ng-click="{{this.ng-click}}" {{/if}}>
+                        <a><span class="fa fa-{{this.icon}} menu-dropdown-icon"></span> {{this.value}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div data-target="notification" class="pa-dropdown-wrapper">
+            <div class="pa-dropdown">
+                <div class="pa-dropdown-header">
+                    {{#each components.div-blog.sub.notification.list}}
+                    <a class="pure-header-link {{this.direction}}">{{this.value}}<span class="fa fa-{{this.icon}}"></span></a>
+                    {{/each}}
+                </div>
+                <p class="pa-dropdown-title">{{components.div-blog.sub.notification.title}}</p>
+            </div>
         </div>
         <label for="{{elements.inputs.search.id}}">
             <span id="{{elements.spans.id.[0]}}" class="fa fa-search"></span>

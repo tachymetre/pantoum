@@ -2,13 +2,20 @@
 module.exports = function($document) {
     return {
         restrict: 'A',
+        scope: {
+            'aim': '@'
+        },
         link: (scope, elem, attrs) => {
+            var dropdownWrapper = $('.pa-dropdown-wrapper'),
+                nonTarget = dropdownWrapper.filter("[data-target!=" + scope.aim + "]"),
+                target = dropdownWrapper.filter("[data-target=" + scope.aim + "]");
             $(elem).on('click', (e) => {
-                $('.pa-dropdown-wrapper').toggleClass('active');
+                nonTarget.removeClass('active');
+                target.toggleClass('active');
                 return false;
             });
             $document.on('click', (e) => {
-            	$('.pa-dropdown-wrapper').removeClass('active');
+                dropdownWrapper.removeClass('active');
             });
         }
     }

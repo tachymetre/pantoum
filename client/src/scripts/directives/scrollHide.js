@@ -21,19 +21,27 @@ module.exports = function($state) {
             }, 250);
 
             function hasScrolled() {
-                var windowTop = $(window).scrollTop(),
-                    $dropDownsIsActive;
-                    
+                var check, sum, $dropDownsIsActive,
+                    checkArray = [],
+                    windowTop = $(window).scrollTop();
+
                 // Only allow the scrollHide when on the blogs route
                 if ($state.$current.url.sourcePath == "/blogs") {
-                    $dropDownsIsActive = $('.pa-dropdown-wrapper').attr('class').indexOf('active');
+                    $('.pa-dropdown-wrapper').each(function(i, v) {
+                        check = $(v).attr('class').indexOf('active');
+                        checkArray.push(check);
+                        sum = checkArray.reduce(function(pv, cv) {
+                            return pv + cv;
+                        }, 0);
+                        $dropDownsIsActive = sum > 0 ? true : false;
+                    });
                 }
 
                 // Make sure the scrolling has passed a certain threshold
                 if (Math.abs(lastScrollTop - windowTop) <= delta) {
                     return;
                 } else {
-                    if (windowTop > lastScrollTop && windowTop > navbarHeight && $dropDownsIsActive == -1) {
+                    if (windowTop > lastScrollTop && windowTop > navbarHeight && !$dropDownsIsActive) {
                         $(elem).removeClass('menu-show').addClass('menu-hide');
                     } else if (windowTop + $(window).height() < $(document).height()) {
                         $(elem).removeClass('menu-hide').addClass('menu-show');

@@ -111,20 +111,27 @@
             pointer-events: auto;
             display: block;
         }
-        .pa-dropdown {
+        [data-target="profile"] .pa-dropdown {
+            right: 25.6%;
             width: 15em;
-            max-width: 20em;
+        }
+        [data-target="notification"] .pa-dropdown {
+            right: 28.6%;
+            width: 30em;
+            height: auto;
+            text-align: center;
+        }
+        .pa-dropdown {
+            max-width: 30em;
+            max-height: 35em;
             position: absolute;
-            top: 120%;
-            right: 26%;
+            top: 130%;
             padding: 0;
             background: $white;
-            border: 1px solid $alpha-1;
-            list-style-type: none;
+            border: 1px solid $gray;
             opacity: 0;
             pointer-events: none;
             display: none;
-            @include box-shadow(0 0 5px $alpha-1);
             @include border-radius(5px);
             &:before {
                 content: "";
@@ -142,6 +149,17 @@
                 right: 15px;
                 border-width: 0 6px 6px 6px;
                 border-color: $white transparent;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .pa-dropdown-title {
+                margin: 1em;
+                color: $coal;
+                font-size: 1em;
+                font-weight: normal;
+                position: relative;
             }
             .pa-dropdown-element {
                 &:hover a {
@@ -164,6 +182,27 @@
             .menu-dropdown-icon {
                 color: $coal;
                 margin-right: 0.5em;
+            }
+            .pa-dropdown-header {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 43px;
+                top: 0;
+                background: $beige;
+                border-bottom: 1px solid $beige;
+            }
+            .pure-header-link {
+                font-size: 90%;
+                margin: 0.5em 1em;
+                padding: 0.5em;
+                border: 1px solid $alpha-1;
+                background: $white;
+                @include border-radius(3px);
+                &:hover {
+                    border: 1px solid $alpha-3;
+                    color: $violet;
+                }
             }
         }
         .clearfix:after {

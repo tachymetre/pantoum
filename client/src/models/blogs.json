@@ -68,6 +68,18 @@
                             "ng-click": "logout()"
                         }]
                     },
+                    "notification": {
+                        "list": [{
+                            "direction": "left",
+                            "icon": "angle-double-right",
+                            "value": "See all notification "
+                        }, {
+                            "direction": "right",
+                            "icon": "check",
+                            "value": "Mark all as read "
+                        }],
+                        "title": "No available notification"
+                    },
                     "content": {
                         "id": "pa-content",
                         "section": {
