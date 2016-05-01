@@ -1,11 +1,13 @@
 /*******************************************************************
- * The MIT License
- * Copyright (C) 2016 Minh Pham <bminhz@yahoo.com.vn>
- * 
- * This file is part of pantoum repository.
- * 
- * pantoum CAN be copied and/or distributed with restrited
- * permission from Minh Pham.
+ 
+ The MIT License
+ Copyright (C) 2016 Minh Pham <bminhz@yahoo.com.vn>
+ 
+ This file is part of pantoum repository.
+ 
+ pantoum CAN be copied and/or distributed with restrited
+ permission from Minh Pham.
+ 
  *******************************************************************/
 
 Permission is hereby granted to any person obtaining a copy
