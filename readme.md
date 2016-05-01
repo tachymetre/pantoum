@@ -5,11 +5,12 @@ Pantoum is a web-based personal blogging service that utilizes web technologies 
 
 For system requirements and installation guides, please head over to the project's [wiki](https://github.com/tachymetre/pantoum/wiki)
 
-### Techology Stack
+## Techology Stack
 
 Pantoum uses a number of open source projects to work properly:
 
-----------[**Client**]----------
+### **Front-End**
+---
 
 * [AngularJS][an] - Superheroic JavaScript MVW Framework
 * [angular-ui-router][an-u] - The de-facto solution to flexible routing with nested views in AngularJS
@@ -33,7 +34,8 @@ Pantoum uses a number of open source projects to work properly:
 * [rerun-script][rs] - Invoke "npm scripts" upon file changes. Configure via `package.json` using glob patterns
 * [UglifyJS2][ujs2] - JavaScript parser / mangler / compressor / beautifier toolkit
 
-----------[**Server**]----------
+### **Back-End****
+---
 
 * [Laravel][la] - The PHP Framework For Web Artisans
 * [laravel-cors][la-c] - Adds CORS headers support in your Laravel application
@@ -43,10 +45,10 @@ Pantoum uses a number of open source projects to work properly:
 * [mockery][mo] - PHP mock object framework for use in unit testing
 * [PHPUnit][pu] - Programmer-oriented testing framework for PHP
 
-### Version
+## Version
 1.0.0
 
-### License
+## License
 
 Pantoum is written and maintained by [Minh Pham](https://github.com/tachymetre), and is licensed under [MIT](https://opensource.org/licenses/MIT).
 
