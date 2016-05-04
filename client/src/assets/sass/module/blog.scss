@@ -282,8 +282,11 @@
         color: $gray;
         font-size: 90%;
         &:hover {
-            color: darken($gray, 20%);
+            opacity: 0.8;
         }
+    }
+    .update-like {
+        color: $yellow;
     }
 }
 
