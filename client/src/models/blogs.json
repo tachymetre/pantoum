@@ -86,9 +86,11 @@
                             "ng-repeat": "blog in blogs.blogs",
                             "list": [{
                                 "icon": "star-o",
+                                "custom-directive": "update-likes",
                                 "value": " {[{blog.blog_like}]} likes"
                             }, {
                                 "icon": "comment-o",
+                                "custom-directive": "show-comments",
                                 "value": " {[{blog.blog_comment}]} comments"
                             }]
                         }
