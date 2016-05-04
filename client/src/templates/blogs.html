@@ -86,7 +86,7 @@
                 <ul class="pa-unordered-list">
                     {{#each components.div-blog.sub.content.section.list}}
                     <li class="pure-util-item">
-                        <a class="pure-util-link"><span class="fa fa-{{this.icon}}"></span> {{this.value}}</a>
+                        <a class="pure-util-link" {{#if this.custom-directive}} {{this.custom-directive}} {{/if}}><span class="fa fa-{{this.icon}}"></span> {{this.value}}</a>
                     </li>
                     {{/each}}
                 </ul>
