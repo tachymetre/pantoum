@@ -40,7 +40,7 @@ module.exports = function($http) {
         }).success(function(highlights, status, headers, config) {
             vm.highlights = highlights.data;
         });
-    }
+    };
 
     vm.getHighlightContent();
 }
