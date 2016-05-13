@@ -92,7 +92,7 @@
                             }, {
                                 "icon": "comment-o",
                                 "custom-directive": "show-comments",
-                                "custom-attribute": "",
+                                "custom-attribute": "blog.blog_comment",
                                 "value": " {[{blog.blog_comment}]} comments"
                             }]
                         }
