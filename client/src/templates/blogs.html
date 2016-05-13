@@ -51,8 +51,7 @@
             <div class="pa-dropdown">
                 <div class="pa-dropdown-header">
                     {{#each components.div-blog.sub.notification.list}}
-                    <a class="pure-header-link {{this.direction}}">{{this.value}}<span class="fa fa-{{this.icon}}"></span></a>
-                    {{/each}}
+                    <a class="pure-header-link {{this.direction}}">{{this.value}}<span class="fa fa-{{this.icon}}"></span></a> {{/each}}
                 </div>
                 <p class="pa-dropdown-title">{{components.div-blog.sub.notification.title}}</p>
             </div>
@@ -86,7 +85,9 @@
                 <ul class="pa-unordered-list">
                     {{#each components.div-blog.sub.content.section.list}}
                     <li class="pure-util-item">
-                        <a class="pure-util-link" {{#if this.custom-directive}} {{this.custom-directive}} {{/if}}><span class="fa fa-{{this.icon}}"></span> {{this.value}}</a>
+                        <a class="pure-util-link" {{#if this.custom-directive}} {{this.custom-directive}} {{/if}} ng-model="{{this.custom-attribute}}">
+                            <span class="fa fa-{{this.icon}}"></span> {{this.value}}
+                        </a>
                     </li>
                     {{/each}}
                 </ul>

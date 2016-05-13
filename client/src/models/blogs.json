@@ -87,10 +87,12 @@
                             "list": [{
                                 "icon": "star-o",
                                 "custom-directive": "update-likes",
+                                "custom-attribute": "blog.blog_like",
                                 "value": " {[{blog.blog_like}]} likes"
                             }, {
                                 "icon": "comment-o",
                                 "custom-directive": "show-comments",
+                                "custom-attribute": "",
                                 "value": " {[{blog.blog_comment}]} comments"
                             }]
                         }
