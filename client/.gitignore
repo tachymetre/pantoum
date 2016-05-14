@@ -6,4 +6,4 @@ build/
 tmp/
 temp/
 .DS_Store
-.idea
+.idea/
