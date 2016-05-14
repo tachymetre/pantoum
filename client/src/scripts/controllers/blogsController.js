@@ -5,14 +5,9 @@ module.exports = function(blogsService, $http) {
     vm.lastPage = 1;
 
     vm.init = (function() {
-        vm.lastPage = 1;
-        $http({
-            url: 'http://pantoum.dev/api/v1/blogs',
-            method: "GET",
-            params: { page: vm.lastPage }
-        }).success(function(blogs, status, headers, config) {
-            vm.blogs = blogs.data;
-            vm.currentPage = blogs.current_page;
+        blogsService.getBlogContent(vm.lastPage).then(function(response) {
+            vm.blogs = response.data.data;
+            vm.currentPage = response.data.current_page;
         });
     })();
 
@@ -20,23 +15,16 @@ module.exports = function(blogsService, $http) {
         return JSON.parse(localStorage.user).profile_image;
     }
 
-    vm.loadMoreContent = function() {
-        vm.lastPage += 1;
-        $http({
-            url: 'http://pantoum.dev/api/v1/blogs',
-            method: "GET",
-            params: { page: vm.lastPage }
-        }).success((blogs, status, headers, config) => {
-            vm.blogs = vm.blogs.concat(blogs.data);
-        });
-    };
-
     vm.getHighlightContent = (function() {
-        $http({
-            url: 'http://pantoum.dev/api/v1/highlights',
-            method: "GET"
-        }).success(function(highlights, status, headers, config) {
-            vm.highlights = highlights.data;
+        blogsService.getHighlightContent().then(function(response) {
+            vm.highlights = response.data.data;
         });
     })();
+    
+    vm.loadMoreContent = function() {
+        vm.lastPage += 1;
+        blogsService.loadMoreContent(vm.lastPage).then(function(response) {
+            vm.blogs = vm.blogs.concat(response.data.data);
+        });
+    }
 }
