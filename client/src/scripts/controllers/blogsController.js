@@ -1,10 +1,10 @@
 'use strict';
-module.exports = function($http) {
+module.exports = function(blogsService, $http) {
     var vm = this;
     vm.blogs = [];
     vm.lastPage = 1;
 
-    vm.init = function() {
+    vm.init = (function() {
         vm.lastPage = 1;
         $http({
             url: 'http://pantoum.dev/api/v1/blogs',
@@ -14,9 +14,7 @@ module.exports = function($http) {
             vm.blogs = blogs.data;
             vm.currentPage = blogs.current_page;
         });
-    };
-
-    vm.init();
+    })();
 
     vm.getUserProfile = function() {
         return JSON.parse(localStorage.user).profile_image;
@@ -33,14 +31,12 @@ module.exports = function($http) {
         });
     };
 
-    vm.getHighlightContent = function() {
+    vm.getHighlightContent = (function() {
         $http({
             url: 'http://pantoum.dev/api/v1/highlights',
             method: "GET"
         }).success(function(highlights, status, headers, config) {
             vm.highlights = highlights.data;
         });
-    };
-
-    vm.getHighlightContent();
+    })();
 }
