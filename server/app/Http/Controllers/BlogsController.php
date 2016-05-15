@@ -150,6 +150,28 @@ class BlogsController extends Controller
     }
 
     /**
+     * Update the likeCount resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateLikeCount(Request $request, $id) 
+    {
+        if(!$request->like_count) {
+            return Response::json([
+                'error' => [
+                    'message' => 'Please provide like_count'
+                ]
+            ], 422);
+        } 
+
+        $blog = Blog::find($id);
+        $blog->like = $request->like_count;
+        $blog->save();
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

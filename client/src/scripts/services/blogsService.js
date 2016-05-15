@@ -23,6 +23,16 @@ module.exports = function($http) {
                 params: { page: lastPage }
             });
             return promise;
+        },
+        updateBlogLike: function(blogId, updateLikeCount) {
+            var promise = $http({
+                method: 'PUT',
+                url: 'http://pantoum.dev/api/v1/blogs/updateLike/' + blogId,
+                params: {
+                    like_count: updateLikeCount
+                }
+            });
+            return promise;
         }
     };
 }

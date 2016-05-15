@@ -85,7 +85,7 @@
                 <ul class="pa-unordered-list">
                     {{#each components.div-blog.sub.content.section.list}}
                     <li class="pure-util-item">
-                        <a class="pure-util-link" {{#if this.custom-directive}} {{this.custom-directive}} {{/if}} ng-model="{{this.custom-attribute}}">
+                        <a class="pure-util-link" {{#if this.custom-directive}} {{this.custom-directive}} {{/if}} ng-model="{{this.custom-attribute}}" post-index={[{$index}]}>
                             <span class="fa fa-{{this.icon}}"></span> {{this.value}}
                         </a>
                     </li>

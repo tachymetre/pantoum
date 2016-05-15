@@ -9,12 +9,12 @@ module.exports = function($document) {
             var dropdownWrapper = $('.pa-dropdown-wrapper'),
                 nonTarget = dropdownWrapper.filter("[data-target!=" + scope.aim + "]"),
                 target = dropdownWrapper.filter("[data-target=" + scope.aim + "]");
-            $(elem).on('click', (e) => {
+            $(elem).bind('click', (e) => {
                 nonTarget.removeClass('active');
                 target.toggleClass('active');
                 return false;
             });
-            $document.on('click', (e) => {
+            $document.bind('click', (e) => {
                 dropdownWrapper.removeClass('active');
             });
         }

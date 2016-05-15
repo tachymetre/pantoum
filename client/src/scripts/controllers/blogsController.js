@@ -20,7 +20,7 @@ module.exports = function(blogsService, $http) {
             vm.highlights = response.data.data;
         });
     })();
-    
+
     vm.loadMoreContent = function() {
         vm.lastPage += 1;
         blogsService.loadMoreContent(vm.lastPage).then(function(response) {

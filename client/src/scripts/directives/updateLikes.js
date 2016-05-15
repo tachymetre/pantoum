@@ -1,14 +1,15 @@
 'use strict';
-module.exports = function() {
+module.exports = function(blogsService) {
     return {
         restrict: 'A',
         scope: {
-            ngModel: '='
+            ngModel: '=',
+            postIndex: '@'
         },
         controller: 'blogsController',
         controllerAs: 'blogs',
         link: (scope, elem, attrs, ctrl) => {
-            elem.on('click', (e) => {
+            elem.bind('click', (e) => {
                 // Update stylings for according icons
                 elem.toggleClass('update-like');
                 var starElement = elem.children();
@@ -24,6 +25,8 @@ module.exports = function() {
                         scope.ngModel = parseInt(scope.ngModel) - 1;
                     });
                 }
+                // Propagate the number of likes into database
+                blogsService.updateBlogLike(scope.blogs.blogs[scope.postIndex].blog_id, scope.ngModel);
             });
         }
     };

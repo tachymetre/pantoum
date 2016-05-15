@@ -19,6 +19,7 @@ Route::group(['middleware' => ['web', 'cors'], 'prefix' => 'api/v1'], function (
 
     // Blog routes
     Route::resource('blogs', 'BlogsController');
+    Route::put('blogs/updateLike/{blogId}', 'BlogsController@updateLikeCount');
 
     // Highlight routes
     Route::resource('highlights', 'HighlightsController');
