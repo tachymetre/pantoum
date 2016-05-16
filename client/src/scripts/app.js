@@ -31,7 +31,7 @@ app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvi
             }
         },
         views: {
-            'blogsContent': {
+            'main': {
                 templateUrl: 'views/auth.html',
                 controller: 'authController as auth'
             }
@@ -45,7 +45,7 @@ app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvi
             }
         },
         views: {
-            'blogsContent': {
+            'main': {
                 templateUrl: 'views/blogs.html',
                 controller: 'blogsController as blogs'
             }

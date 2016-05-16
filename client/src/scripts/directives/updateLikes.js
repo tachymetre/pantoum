@@ -26,7 +26,9 @@ module.exports = function(blogsService) {
                     });
                 }
                 // Propagate the number of likes into database
-                blogsService.updateBlogLike(scope.blogs.blogs[scope.postIndex].blog_id, scope.ngModel);
+                var blogId = scope.blogs.blogs[scope.postIndex].blog_id,
+                    userId = JSON.parse(localStorage.getItem('user')).id;
+                blogsService.updateBlogLike(blogId, scope.ngModel, userId);
             });
         }
     };

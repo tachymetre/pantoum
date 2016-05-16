@@ -24,12 +24,13 @@ module.exports = function($http) {
             });
             return promise;
         },
-        updateBlogLike: function(blogId, updateLikeCount) {
+        updateBlogLike: function(blogId, updateLikeCount, userId) {
             var promise = $http({
                 method: 'PUT',
                 url: 'http://pantoum.dev/api/v1/blogs/updateLike/' + blogId,
                 params: {
-                    like_count: updateLikeCount
+                    like_count: updateLikeCount,
+                    user_id: userId
                 }
             });
             return promise;
