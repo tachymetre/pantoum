@@ -15,6 +15,9 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    protected $casts = [
+        'blog_like' => 'array'
+    ];
     /**
      * The attributes that should be hidden for arrays.
      *

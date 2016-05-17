@@ -158,10 +158,10 @@ class BlogsController extends Controller
      */
     public function updateLikeCount(Request $request, $id) 
     {
-        if(!$request->like_count) {
+        if(!$request->like_count or !$request->user_id) {
             return Response::json([
                 'error' => [
-                    'message' => 'Please provide like_count'
+                    'message' => 'Please provide like_count or user_id'
                 ]
             ], 422);
         } 
@@ -169,6 +169,18 @@ class BlogsController extends Controller
         $blog = Blog::find($id);
         $blog->like = $request->like_count;
         $blog->save();
+        $user = User::find($request->user_id);
+
+        // Insert each blog_like into a serialized array
+        if(empty($user->blog_like)) {
+            $blogLikeArray = [];
+        } else {
+            $blogLikeArray = unserialize($user->blog_like);
+        }
+        array_push($blogLikeArray, $id);
+        $blogLikeArraySerialized = serialize($blogLikeArray);
+        $user->blog_like = $blogLikeArraySerialized;
+        $user->save();
     }
 
     /**
