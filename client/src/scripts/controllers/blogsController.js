@@ -11,9 +11,10 @@ module.exports = function(blogsService, $http) {
         });
     })();
 
-    vm.getUserProfile = function() {
-        return JSON.parse(localStorage.user).profile_image;
-    }
+    vm.getUserProfile = (function() {
+        var localUser = localStorage.getItem('user');
+        vm.userProfileImage = JSON.parse(localUser).profile_image;
+    })();
 
     vm.getHighlightContent = (function() {
         blogsService.getHighlightContent().then(function(response) {
