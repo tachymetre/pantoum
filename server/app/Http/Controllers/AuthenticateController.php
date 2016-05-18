@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Ap\User;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use App\Http\Requests;
 
 class AuthenticateController extends Controller
 {
@@ -61,6 +59,7 @@ class AuthenticateController extends Controller
         }
 
         // the token is valid and we have found the user via the sub claim
+        $user->blog_like = unserialize($user->blog_like);
         return response()->json(compact('user'));
     }
 }
