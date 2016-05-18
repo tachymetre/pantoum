@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function($scope, $auth, $state, $http) {
+module.exports = function($auth, authenticateService, $state, $log) {
     var vm = this;
     vm.loginError = false;
     vm.loginErrorText;
@@ -8,20 +8,16 @@ module.exports = function($scope, $auth, $state, $http) {
             email: vm.email,
             password: vm.password
         };
-
         $auth.login(credentials).then(function() {
-            $http.get('http://pantoum.dev/api/v1/authenticate/user')
-                .success(function(response) {
-                    var user = JSON.stringify(response.user);
-                    localStorage.setItem('user', user);
-                    $scope.currentUser = response.user;
-                    $state.go('blogs');
-                })
-                .error(function(error) {
-                    vm.loginError = true;
-                    vm.loginErrorText = error.data.error;
-                    console.log(vm.loginErrorText);
-                })
+            authenticateService.authenticateUser().then(function(response) {
+                var userObj = response.data.user;
+                localStorage.setItem('user', JSON.stringify(userObj));
+                $state.go('blogs');
+            }, function(error) {
+                vm.loginError = true;
+                vm.loginErrorText = error.data.error;
+                $log.error(vm.loginErrorText);
+            });
         });
     }
 }

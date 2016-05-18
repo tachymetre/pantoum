@@ -59,12 +59,8 @@ app.run(($rootScope, $state, $auth, PermissionStore) => {
     $rootScope.logout = () => {
         $auth.logout().then(() => {
             localStorage.removeItem('user');
-            $rootScope.currentUser = null;
             $state.go('auth');
         });
-    }
-    if (typeof localUser !== "undefined" && localUser !== "undefined") {
-        $rootScope.currentUser = JSON.parse(localUser);
     }
     PermissionStore.definePermission('isLoggedIn', (stateParams) => {
         // If the returned value is *truthy* then the user has the role, otherwise they don't
