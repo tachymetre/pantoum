@@ -12,7 +12,7 @@
 // Create app settings and routing
 var app = angular.module("pantoum", ['ui.router', 'satellizer', 'permission']);
 app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvider) => {
-    
+
     // Set up route fallback and authorized API
     $authProvider.loginUrl = 'http://pantoum.dev/api/v1/authenticate';
     $urlRouterProvider.otherwise('/auth');
@@ -55,6 +55,7 @@ app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvi
 
 // Execute logout logics and permission settings
 app.run(($rootScope, $state, $auth, PermissionStore) => {
+    var localUser = localStorage.getItem('user');
     $rootScope.logout = () => {
         $auth.logout().then(() => {
             localStorage.removeItem('user');
@@ -62,7 +63,9 @@ app.run(($rootScope, $state, $auth, PermissionStore) => {
             $state.go('auth');
         });
     }
-    $rootScope.currentUser = JSON.parse(localStorage.getItem('user'));
+    if (typeof localUser !== "undefined" && localUser !== "undefined") {
+        $rootScope.currentUser = JSON.parse(localUser);
+    }
     PermissionStore.definePermission('isLoggedIn', (stateParams) => {
         // If the returned value is *truthy* then the user has the role, otherwise they don't
         if ($auth.isAuthenticated()) {
