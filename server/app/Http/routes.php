@@ -23,4 +23,7 @@ Route::group(['middleware' => ['web', 'cors'], 'prefix' => 'api/v1'], function (
 
     // Highlight routes
     Route::resource('highlights', 'HighlightsController');
+
+    // Activity routes
+    Route::resource('activities', 'ActivityController');
 });

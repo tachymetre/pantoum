@@ -22,4 +22,8 @@ class Activity extends Model
     public function scopeThatSatisfy($query, $userId, $blogId, $activity) {
         return $query->where(['user_id' => $userId, 'blog_id' => $blogId, 'activity' => $activity]);
     }
+
+    public function scopeOfType($query, $userId, $activity) {
+        return $query->where(['user_id' => $userId, 'activity' => $activity]);
+    }
 }
