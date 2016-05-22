@@ -18,4 +18,8 @@ class Activity extends Model
     ];
 
     protected $except = ['api/*'];
+
+    public function scopeThatSatisfy($query, $userId, $blogId, $activity) {
+        return $query->where(['user_id' => $userId, 'blog_id' => $blogId, 'activity' => $activity]);
+    }
 }

@@ -158,10 +158,10 @@ class BlogsController extends Controller
      */
     public function updateLikeCount(Request $request, $id)
     {
-        if(!$request->like_count or !$request->user_id) {
+        if(!isset($request->like_count) or !$request->user_id or !$request->direction) {
             return Response::json([
                 'error' => [
-                    'message' => 'Please provide like_count or user_id'
+                    'message' => 'Please provide like_count or user_id or direction'
                 ]
             ], 422);
         }
@@ -169,13 +169,19 @@ class BlogsController extends Controller
         $blog = Blog::find($id);
         $blog->like = $request->like_count;
         $blog->save();
-        // Insert new activity into the Activity model
-        $activity = new Activity;
-        $activity->user_id = $request->user_id;
-        $activity->blog_id = $id;
-        $activity->activity = 'blog_like';
-        $activity->value = 1;
-        $activity->save();
+
+        // Insert/remove the activity into/from the Activity model
+        if ($request->direction == 'up') {
+            $activity = new Activity;
+            $activity->user_id = $request->user_id;
+            $activity->blog_id = $id;
+            $activity->activity = 'blog_like';
+            $activity->value = 1;
+            $activity->save();
+        } else {
+            $activity = Activity::thatSatisfy($request->user_id, $id, 'blog_like');
+            $activity->delete();
+        }
     }
 
     /**
