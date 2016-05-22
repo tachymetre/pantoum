@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
-use App\User;
+use App\Activity;
 use Response;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -52,7 +52,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -105,7 +105,7 @@ class BlogsController extends Controller
 
         return Response::json([
             'previous_blog_id' => $previous,
-            'next_blog_id' => $next, 
+            'next_blog_id' => $next,
             'data' => $this->transform($blog)
         ], 200);
     }
@@ -156,7 +156,7 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateLikeCount(Request $request, $id) 
+    public function updateLikeCount(Request $request, $id)
     {
         if(!$request->like_count or !$request->user_id) {
             return Response::json([
@@ -164,23 +164,18 @@ class BlogsController extends Controller
                     'message' => 'Please provide like_count or user_id'
                 ]
             ], 422);
-        } 
+        }
 
         $blog = Blog::find($id);
         $blog->like = $request->like_count;
         $blog->save();
-        $user = User::find($request->user_id);
-
-        // Insert each blog_like into a serialized array
-        if(empty($user->blog_like)) {
-            $blogLikeArray = [];
-        } else {
-            $blogLikeArray = unserialize($user->blog_like);
-        }
-        array_push($blogLikeArray, $id);
-        $blogLikeArraySerialized = serialize($blogLikeArray);
-        $user->blog_like = $blogLikeArraySerialized;
-        $user->save();
+        // Insert new activity into the Activity model
+        $activity = new Activity;
+        $activity->user_id = $request->user_id;
+        $activity->blog_id = $id;
+        $activity->activity = 'blog_like';
+        $activity->value = 1;
+        $activity->save();
     }
 
     /**
@@ -196,7 +191,7 @@ class BlogsController extends Controller
 
     /**
      * Transform collection of blogs for better data encapsulation
-     * @param int  $blogs 
+     * @param int  $blogs
      * @return \Illuminate\Http\Response
      */
     private function transformCollection($blogs) {
@@ -216,7 +211,7 @@ class BlogsController extends Controller
 
     /**
      * Transform a single blog for better data encapsulation
-     * @param int  $blog 
+     * @param int  $blog
      * @return \Illuminate\Http\Response
      */
     private function transform($blog) {
