@@ -24,6 +24,17 @@ module.exports = function($http) {
             });
             return promise;
         },
+        getBlogActivity: function(userId, activity) {
+            var promise = $http({
+                method: 'GET',
+                url: 'http://pantoum.dev/api/v1/activities',
+                params: {
+                    user_id: userId,
+                    activity: activity
+                }
+            });
+            return promise;
+        },
         updateBlogLike: function(blogId, updateLikeCount, userId, direction) {
             var promise = $http({
                 method: 'PUT',

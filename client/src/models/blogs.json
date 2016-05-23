@@ -88,11 +88,13 @@
                                 "icon": "star-o",
                                 "custom-directive": "update-likes",
                                 "custom-attribute": "blog.blog_like",
+                                "blog-id": "{[{blog.blog_id}]}",
                                 "value": " {[{blog.blog_like}]} likes"
                             }, {
                                 "icon": "comment-o",
                                 "custom-directive": "show-comments",
                                 "custom-attribute": "blog.blog_comment",
+                                "blog-id": "{[{blog.blog_id}]}",
                                 "value": " {[{blog.blog_comment}]} comments"
                             }]
                         }

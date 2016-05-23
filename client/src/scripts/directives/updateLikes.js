@@ -6,14 +6,21 @@ module.exports = function(blogsService) {
             ngModel: '=',
             postIndex: '@'
         },
-        controller: 'blogsController',
-        controllerAs: 'blogs',
-        link: (scope, elem, attrs, ctrl) => {
+        link: (scope, elem, attrs) => {
+            var starElement = elem.children();
+            var blogActiveArray = localStorage.getItem('blog_active').split(',');
             var updateDirection;
+
+            // Update the stylings if visited
+            if (blogActiveArray.indexOf(attrs.blogIndex) > -1) {
+                elem.addClass('update-like');
+                $(starElement[0]).attr("class", "fa fa-star");
+            }
+
+            // Propagate the click count with appropriate action(s)
             elem.bind('click', (e) => {
                 // Update stylings for according icons
                 elem.toggleClass('update-like');
-                var starElement = elem.children();
                 if ($(starElement[0]).attr("class").indexOf("o") > -1) {
                     $(starElement[0]).attr("class", "fa fa-star");
                     updateDirection = 'up';
@@ -29,7 +36,7 @@ module.exports = function(blogsService) {
                     });
                 }
                 // Propagate the number of likes into database
-                var blogId = scope.blogs.blogs[scope.postIndex].blog_id,
+                var blogId = attrs.blogIndex,
                     userId = JSON.parse(localStorage.getItem('user')).id;
                 blogsService.updateBlogLike(blogId, scope.ngModel, userId, updateDirection);
             });

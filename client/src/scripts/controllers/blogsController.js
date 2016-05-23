@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(blogsService, $http) {
-    var vm = this;
+    var vm = this,
+        localUser = JSON.parse(localStorage.getItem('user'));
     vm.blogs = [];
     vm.lastPage = 1;
 
@@ -11,9 +12,18 @@ module.exports = function(blogsService, $http) {
         });
     })();
 
+    vm.getBlogLikeActivity = (function() {
+        blogsService.getBlogActivity(localUser.id, 'blog_like').then(function(response) {
+            var userBlogLikesArray = [];
+            response.data.data.forEach(function(value) {
+                userBlogLikesArray.push(value.blog_like_id);
+            });
+            localStorage.setItem('blog_active', userBlogLikesArray);
+        });
+    })();
+
     vm.getUserProfile = (function() {
-        var localUser = localStorage.getItem('user');
-        vm.userProfileImage = JSON.parse(localUser).profile_image;
+        vm.userProfileImage = localUser.profile_image;
     })();
 
     vm.getHighlightContent = (function() {
