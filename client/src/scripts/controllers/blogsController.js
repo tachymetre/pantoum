@@ -18,7 +18,7 @@ module.exports = function(blogsService, $http) {
             response.data.data.forEach(function(value) {
                 userBlogLikesArray.push(value.blog_like_id);
             });
-            localStorage.setItem('blog_active', userBlogLikesArray);
+            localStorage.setItem('blog_active', JSON.stringify(userBlogLikesArray));
         });
     })();
 
