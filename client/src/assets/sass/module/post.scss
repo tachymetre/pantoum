@@ -28,7 +28,8 @@
         background: $violet;
         border: none;
         color: $white;
-        margin: 0.57em 0.71em;
+        margin: 0.57em;
+        margin-right: 2em;
         &:hover {
             background: lighten($violet, 5%);
         }
