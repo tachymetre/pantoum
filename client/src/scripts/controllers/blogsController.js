@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(blogsService, $http) {
+module.exports = function(blogsService, $location) {
     var vm = this,
         localUser = JSON.parse(localStorage.getItem('user'));
     vm.blogs = [];
@@ -38,4 +38,9 @@ module.exports = function(blogsService, $http) {
             vm.blogs = vm.blogs.concat(response.data.data);
         });
     }
+
+    vm.getCorrectPathName = (function() {
+        var baseDomain = $location.absUrl().split("#")[0];
+        vm.fulfilledDomain = baseDomain + '#/post/';
+    })();
 }

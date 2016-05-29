@@ -65,7 +65,9 @@
     <div id="{{components.div-blog.sub.content.id}}">
         <section class="pa-post" ng-repeat="{{components.div-blog.sub.content.section.ng-repeat}}">
             <header class="pa-post-header">
-                <h2 class="pa-post-title">{[{blog.blog_title}]}</h2>
+                <h2 class="pa-post-title">
+                    <a ng-href="{[{blogs.fulfilledDomain}]}{[{blog.blog_id}]}" class="pa-title-link">{[{blog.blog_title}]}</a>
+                </h2>
                 <div class="pa-post-parameter">
                     <img class="pa-post-avatar" alt="{[{blog.submitted_by}]}" src="{[{blog.represented_by}]}">
                     <div class="pa-post-meta">

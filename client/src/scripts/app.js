@@ -50,6 +50,20 @@ app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvi
                 controller: 'blogsController as blogs'
             }
         }
+    }).state('post', {
+        url: '/post/:blogId',
+        data: {
+            permissions: {
+                except: ['anonymous'],
+                redirectTo: 'auth'
+            }
+        },
+        views: {
+            'main': {
+                templateUrl: 'views/post.html',
+                controller: 'postController as post'
+            }
+        }
     });
 });
 

@@ -3,3 +3,4 @@
 var app = angular.module('pantoum');
 app.controller('authController', require('./authController'));
 app.controller('blogsController', require('./blogsController'));
+app.controller('postController', require('./postController'));
