@@ -11,7 +11,10 @@
 
 // Create app settings and routing
 var app = angular.module("pantoum", ['ui.router', 'satellizer', 'permission']);
-app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvider) => {
+app.config(($stateProvider, $urlRouterProvider, $authProvider, $interpolateProvider, $compileProvider) => {
+
+    // Disable debug info for other testing tools
+    $compileProvider.debugInfoEnabled(false);
 
     // Set up route fallback and authorized API
     $authProvider.loginUrl = 'http://pantoum.dev/api/v1/authenticate';
