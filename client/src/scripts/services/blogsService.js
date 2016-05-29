@@ -46,6 +46,13 @@ module.exports = function($http) {
                 }
             });
             return promise;
+        },
+        getSingleBlog: function(blogId) {
+            var promise = $http({
+                method: 'GET',
+                url: 'http://pantoum.dev/api/v1/blogs/' + blogId
+            });
+            return promise;
         }
     };
 }

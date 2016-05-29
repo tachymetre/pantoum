@@ -98,14 +98,7 @@ class BlogsController extends Controller
             ], 404);
         }
 
-        // Get the previous blog id
-        $previous = Blog::where('id', '<', $blog->id)->max('id');
-        // Get the next blog id
-        $next = Blog::where('id', '>', $blog->id)->min('id');
-
         return Response::json([
-            'previous_blog_id' => $previous,
-            'next_blog_id' => $next,
             'data' => $this->transform($blog)
         ], 200);
     }
