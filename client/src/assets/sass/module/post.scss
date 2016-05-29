@@ -4,3 +4,198 @@
 
 @import "../partial/settings";
 @import "../partial/color";
+.pa-navbar {
+    height: 3.3em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#pa-navbar-section {
+    .util-link {
+        float: right;
+    }
+    .util-icon {
+        color: $gray;
+        font-size: 1.2em;
+        margin-top: 1em;
+        &:hover {
+            color: darken($gray, 20%);
+        }
+    }
+    .pa-post-profile-image {
+        position: relative;
+        width: 2.3em;
+        height: 2.3em;
+        margin: 0.5em;
+        @include border-radius(5px);
+    }
+    // Search box
+    .pa-search-box {
+        @include border-radius(5px);
+        border: 1px solid $dust;
+        margin: 0.5em;
+        margin-left: 1em;
+        text-indent: 1.71em;
+        padding: 0.5em;
+        outline: none;
+        width: 30%;
+    }
+    #search-input-icon {
+        position: absolute;
+        top: 1.14em;
+        left: 22.2em;
+        color: $gray;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .menu-icon {
+        color: $gray;
+        font-size: 1.2em;
+        position: fixed;
+        margin-top: 1em;
+        right: 60px;
+        &:hover {
+            color: darken($gray, 20%);
+        }
+    }
+    // Dropdown
+    .active .pa-dropdown {
+        opacity: 1;
+        pointer-events: auto;
+        display: block;
+    }
+    [data-target="profile"] .pa-dropdown {
+        right: 15%;
+        width: 15em;
+    }
+    [data-target="notification"] .pa-dropdown {
+        right: 16.7%;
+        width: 30em;
+        height: auto;
+        text-align: center;
+    }
+    .pa-dropdown {
+        max-width: 30em;
+        max-height: 35em;
+        position: absolute;
+        top: 8%;
+        padding: 0;
+        background: $white;
+        border: 1px solid $gray;
+        opacity: 0;
+        pointer-events: none;
+        display: none;
+        @include border-radius(5px);
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            bottom: 100%;
+            right: 13px;
+            border-width: 0 8px 8px 8px;
+            border-style: solid;
+            border-color: $alpha-1 transparent;
+        }
+        &:after {
+            @extend .pa-dropdown:before;
+            right: 15px;
+            border-width: 0 6px 6px 6px;
+            border-color: $white transparent;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        .pa-dropdown-title {
+            margin: 1em;
+            color: $coal;
+            font-size: 1em;
+            font-weight: normal;
+            position: relative;
+        }
+        .pa-dropdown-element {
+            &:hover a {
+                background: lighten($violet, 40%);
+            }
+            &:first-of-type a {
+                @include border-radius(5px 5px 0 0);
+            }
+            &:last-of-type a {
+                @include border-radius(0 0 5px 5px);
+            }
+            a {
+                display: block;
+                padding: 0.8em;
+                text-decoration: none;
+                color: $coal;
+                border-bottom: 1px solid $beige;
+            }
+        }
+        .menu-dropdown-icon {
+            color: $coal;
+            margin-right: 0.5em;
+        }
+        .pa-dropdown-header {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 43px;
+            top: 0;
+            background: $beige;
+            border-bottom: 1px solid $beige;
+        }
+        .pure-header-link {
+            font-size: 90%;
+            margin: 0.5em 1em;
+            padding: 0.5em;
+            border: 1px solid $alpha-1;
+            background: $white;
+            @include border-radius(3px);
+            &:hover {
+                border: 1px solid $alpha-3;
+                color: $violet;
+            }
+        }
+    }
+    .clearfix:after {
+        content: "";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    .menu-hide {
+        top: -3.3em;
+    }
+}
+
+.pa-banner {
+    background: transparent url('http://41.media.tumblr.com/fe341bc8e2f82db9e03cbb5a4323a84f/tumblr_mq7ejb3POL1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    display: table;
+}
+
+.pa-reading {
+    width: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#pa-reading-section {
+    .pa-post-title {
+        font-size: 2.5em;
+        color: $coal;
+        margin-bottom: 0.2em;
+    }
+    .pa-post-description {
+        font-size: 1.1em;
+        color: $coal;
+        line-height: 1.8em;
+        margin-top: 1em;
+    }
+}

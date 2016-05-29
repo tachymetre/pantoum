@@ -1,1 +1,40 @@
-<h1>THIS IS POST</h1>
+<div id="pa-navbar-section" class="pa-navbar">
+    <label for="pa-search-input">
+        <span id="search-input-icon" class="fa fa-search"></span>
+        <input id="pa-search-input" type="text" class="pa-search-box" placeholder="Search Pantoum">
+    </label>
+    <a href="#" class="util-link">
+        <img drop-down="" aim="profile" class="pa-post-profile-image" ng-src="img/users/profile/sd.png" src="img/users/profile/sd.png">
+    </a>
+    <a href="#" class="util-link">
+        <span drop-down="" aim="notification" class="fa fa-bell-o util-icon"></span>
+    </a>
+    <div data-target="profile" class="pa-dropdown-wrapper">
+        <div class="pa-dropdown">
+            <ul>
+                <li class="pa-dropdown-element">
+                    <a><span class="fa fa-user menu-dropdown-icon"></span> Profile</a>
+                </li>
+                <li class="pa-dropdown-element">
+                    <a><span class="fa fa-gear menu-dropdown-icon"></span> Settings</a>
+                </li>
+                <li class="pa-dropdown-element" ng-click="logout()">
+                    <a><span class="fa fa-sign-out menu-dropdown-icon"></span> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-target="notification" class="pa-dropdown-wrapper">
+        <div class="pa-dropdown">
+            <div class="pa-dropdown-header">
+                <a class="pure-header-link left">See all notification <span class="fa fa-angle-double-right"></span></a> <a class="pure-header-link right">Mark all as read <span class="fa fa-check"></span></a>
+            </div>
+            <p class="pa-dropdown-title">No available notification</p>
+        </div>
+    </div>
+</div>
+<div id="pa-banner-section" class="pa-banner"></div>
+<div id="pa-reading-section" class="pa-reading">
+    <h1 class="pa-post-title">{[{post.blog.blog_title}]}</h1>
+    <p class="pa-post-description">{[{post.blog.blog}]}</p>
+</div>
