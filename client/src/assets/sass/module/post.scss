@@ -22,6 +22,17 @@
             color: darken($gray, 20%);
         }
     }
+    .button-violet {
+        float: right;
+        text-shadow: 0 1px 1px $alpha-2;
+        background: $violet;
+        border: none;
+        color: $white;
+        margin: 0.57em 0.71em;
+        &:hover {
+            background: lighten($violet, 5%);
+        }
+    }
     .pa-post-profile-image {
         position: relative;
         width: 2.3em;
