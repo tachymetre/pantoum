@@ -31,7 +31,7 @@ vagrant box add laravel/homestead
 
 ### Installing Homestead
 ```
-composer global require "laravel/homestead=~2.0"
+composer global require "laravel/homestead=~5.0"
 ```
 
 Make sure to place the `~/.composer/vendor/bin` directory in your `PATH` so the `homestead` executable is found when you run the `homestead` command in your terminal
