@@ -34,7 +34,7 @@ Pantoum uses a number of open source projects to work properly:
 * [rerun-script][rs] - Invoke "npm scripts" upon file changes. Configure via `package.json` using glob patterns
 * [UglifyJS2][ujs2] - JavaScript parser / mangler / compressor / beautifier toolkit
 
-### **Back-End****
+### **Back-End**
 ---
 
 * [Laravel][la] - The PHP Framework For Web Artisans
